@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /register
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /cms-guide
+Sitemap: https://www.carwashmgmt.com/sitemap-index.xml
+Sitemap: https://www.carwashmgmt.com/sitemap.xml

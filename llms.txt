@@ -1,0 +1,51 @@
+# Car Wash Services (carwashmgmt.com)
+
+> California's full-service car wash partner — premium chemicals, preventive maintenance, equipment solutions, and expert consulting.
+
+## Main pages
+- Home: https://www.carwashmgmt.com/
+- About: https://www.carwashmgmt.com/about
+- Chemical programs: https://www.carwashmgmt.com/chemistry
+- Preventive maintenance: https://www.carwashmgmt.com/preventive-maintenance
+- Equipment: https://www.carwashmgmt.com/equipment
+- Consulting: https://www.carwashmgmt.com/solutions
+- Results: https://www.carwashmgmt.com/results
+- Blog: https://www.carwashmgmt.com/blog
+- Contact: https://www.carwashmgmt.com/contact
+- Book a call: https://www.carwashmgmt.com/book-a-call
+- ROI calculator: https://www.carwashmgmt.com/calculator
+
+## Contact
+- Phone: (808) 465-2291
+- SMS (keyword only): text START to +1 619-914-6819
+- Email: info@carwashmgmt.com
+- SMS program: https://www.carwashmgmt.com/sms
+- A2P privacy: https://legal.carwashmgmt.com/privacy-policy.html
+- A2P terms: https://legal.carwashmgmt.com/terms-and-conditions.html
+
+## Products
+- High pH Advanced Presoak: https://www.carwashmgmt.com/chemical-product/high-ph-advanced-presoak
+- High pH Intermediate Presoak: https://www.carwashmgmt.com/chemical-product/high-ph-intermediate-presoak
+- High pH Basic Presoak: https://www.carwashmgmt.com/chemical-product/high-ph-basic-presoak
+- Low pH Advanced Presoak: https://www.carwashmgmt.com/chemical-product/low-ph-advanced-presoak
+- Low pH Intermediate Presoak: https://www.carwashmgmt.com/chemical-product/low-ph-intermediate-presoak
+- Low pH Basic Presoak: https://www.carwashmgmt.com/chemical-product/low-ph-basic-presoak
+- Neutral pH Presoak: https://www.carwashmgmt.com/chemical-product/neutral-ph-presoak
+- Neutral Triple Foam: Blue: https://www.carwashmgmt.com/chemical-product/neutral-triple-foam-blue
+- Neutral Triple Foam: Green: https://www.carwashmgmt.com/chemical-product/neutral-triple-foam-green
+- Neutral Triple Foam: Red: https://www.carwashmgmt.com/chemical-product/neutral-triple-foam-red
+- Neutral Triple Foam: Yellow: https://www.carwashmgmt.com/chemical-product/neutral-triple-foam-yellow
+- Neutral Triple Foam: White: https://www.carwashmgmt.com/chemical-product/neutral-triple-foam-white
+- Acid Wheel Cleaner: https://www.carwashmgmt.com/chemical-product/acid-wheel-cleaner
+- Non-Acid Wheel Cleaner: https://www.carwashmgmt.com/chemical-product/non-acid-wheel-cleaner
+- Tire Shine – Solvent Based: https://www.carwashmgmt.com/chemical-product/tire-shine-solvent-based
+- Tire Shine – Water Based: https://www.carwashmgmt.com/chemical-product/tire-shine-water-based
+- Foaming Sealant: https://www.carwashmgmt.com/chemical-product/foaming-sealant
+- Ceramic: https://www.carwashmgmt.com/chemical-product/ceramic
+- Carnauba Wax: https://www.carwashmgmt.com/chemical-product/carnauba-wax
+- Graphene: https://www.carwashmgmt.com/chemical-product/graphene
+- Drying Agent: https://www.carwashmgmt.com/chemical-product/drying-agent
+- Glass Cleaner: https://www.carwashmgmt.com/chemical-product/glass-cleaner
+- Wrap Lube: https://www.carwashmgmt.com/chemical-product/wrap-lube
+- Wall Cleaner: https://www.carwashmgmt.com/chemical-product/wall-cleaner
+- Towel Soap: https://www.carwashmgmt.com/chemical-product/towel-soap
