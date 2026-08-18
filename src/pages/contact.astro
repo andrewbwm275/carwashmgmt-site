@@ -1,67 +1,54 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import { SITE_URL, PHONE, PHONE_TEL, EMAIL, CALENDLY_URL } from '../data/site';
+import { SITE_URL, PHONE, PHONE_TEL, EMAIL, CALENDLY_URL, SMS_DISPLAY, SMS_KEYWORD, SMS_HREF } from '../data/site';
 ---
 
 <SiteLayout
   title="Contact | Car Wash Management"
-  description="Contact Car Wash Management for consulting, chemistry, equipment, and maintenance."
+  description="Contact Car Wash Management. 7776 Trade Street, San Diego. Text START to +1 619-914-6819 for customer-care SMS."
   canonical={`${SITE_URL}/contact`}
   pageKey="contact"
 >
-  <section class="max-w-5xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-12">
-    <div>
-      <h1 class="text-4xl font-black text-slate-950 mb-4">Contact Us</h1>
-      <p class="text-slate-600 mb-8">Tell us about your wash—we'll follow up with clear next steps. No pressure.</p>
-      <ul class="space-y-3 text-sm text-slate-700 mb-8">
-        <li>Call: <a href={`tel:${PHONE_TEL}`} class="hover:text-[#0779ef] font-semibold">{PHONE}</a></li>
-        <li>SMS (keyword only): text START to <a href="sms:+16199146819&body=START" class="hover:text-[#0779ef] font-semibold">+1 619-914-6819</a></li>
-        <li><a href={`mailto:${EMAIL}`} class="hover:text-[#0779ef] font-semibold">{EMAIL}</a></li>
-        <li>Mon–Fri: 8am – 6pm PST</li>
-        <li>Serving car washes nationwide</li>
-      </ul>
-      <a href={CALENDLY_URL} target="_blank" rel="noopener" class="inline-flex bg-[#0779ef] text-white font-bold px-6 py-3 rounded-xl">Book on Calendly</a>
+  <section class="cwm-mkt-hero">
+    <div class="cwm-mkt-hero-solid"></div>
+    <div class="cwm-mkt-hero-content">
+      <span class="cwm-eyebrow">Contact</span>
+      <h1>Talk like operators.</h1>
+      <p>7776 Trade Street, San Diego. Nationwide service. No pitch deck.</p>
     </div>
-    <form data-form="contact" class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 space-y-4 shadow-sm">
-      <div class="grid sm:grid-cols-2 gap-4">
+  </section>
+
+  <section class="cwm-page cwm-page--wide">
+    <div class="cwm-contact-grid">
         <div>
-          <label class="block text-xs font-semibold mb-1.5">Name *</label>
-          <input name="name" required class="w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm" />
+          <p class="cwm-mono">Reach</p>
+          <ul class="cwm-plain-list">
+            <li>Voice <a href={`tel:${PHONE_TEL}`}>{PHONE}</a></li>
+            <li>SMS — text <strong>{SMS_KEYWORD}</strong> to <a href={SMS_HREF}>{SMS_DISPLAY}</a></li>
+            <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
+            <li>Mon–Fri, 8am–6pm Pacific</li>
+          </ul>
+          <p><a class="cwm-text-link" href={CALENDLY_URL} target="_blank" rel="noopener">Calendly</a></p>
         </div>
-        <div>
-          <label class="block text-xs font-semibold mb-1.5">Email *</label>
-          <input name="email" type="email" required class="w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm" />
-        </div>
-      </div>
-      <div class="grid sm:grid-cols-2 gap-4">
-        <div>
-          <label class="block text-xs font-semibold mb-1.5">Phone</label>
-          <input name="phone" class="w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm" />
-        </div>
-        <div>
-          <label class="block text-xs font-semibold mb-1.5">Company</label>
-          <input name="company_name" class="w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm" />
-        </div>
-      </div>
-      <div>
-        <label class="block text-xs font-semibold mb-1.5">City / State</label>
-        <input name="city_state" class="w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm" />
-      </div>
-      <div>
-        <label class="block text-xs font-semibold mb-1.5">Message</label>
-        <textarea name="message" rows="4" class="w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm"></textarea>
-      </div>
-      <p class="text-xs text-slate-600 leading-relaxed">
-        This form does <strong>not</strong> opt you in to SMS. The only way to receive customer-care texts is to text
-        <strong>START</strong> to <a class="text-[#0779ef] underline" href="sms:+16199146819&body=START">+1 619-914-6819</a>.
-        Consent is not a condition of purchase. Reply STOP to opt out, HELP for help. Message frequency varies (up to 8
-        messages per month plus replies). Message and data rates may apply.
-        <a class="text-[#0779ef] underline" href="https://legal.carwashmgmt.com/privacy-policy.html">Privacy Policy</a>
-        and
-        <a class="text-[#0779ef] underline" href="https://legal.carwashmgmt.com/terms-and-conditions.html">Terms</a>.
-        We do not share mobile numbers or SMS consent with third parties or affiliates for marketing.
-      </p>
-      <button type="submit" class="w-full bg-[#0779ef] text-white font-bold py-3 rounded-xl">Send Message</button>
-    </form>
+        <form data-form="contact" class="cwm-form">
+          <div>
+            <label class="cwm-label" for="c-name">Name *</label>
+            <input id="c-name" class="cwm-input" name="name" required />
+          </div>
+          <div>
+            <label class="cwm-label" for="c-email">Email *</label>
+            <input id="c-email" class="cwm-input" name="email" type="email" required />
+          </div>
+          <div>
+            <label class="cwm-label" for="c-phone">Phone</label>
+            <input id="c-phone" class="cwm-input" name="phone" />
+          </div>
+          <div>
+            <label class="cwm-label" for="c-msg">What’s broken or what do you want quoted?</label>
+            <textarea id="c-msg" class="cwm-input" name="message" rows="5"></textarea>
+          </div>
+          <button type="submit" class="cwm-btn-primary">Send</button>
+        </form>
+    </div>
   </section>
 </SiteLayout>

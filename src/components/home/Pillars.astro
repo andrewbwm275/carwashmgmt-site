@@ -1,45 +1,22 @@
 ---
-const pillars = [
-  {
-    title: 'Consulting',
-    desc: 'Audit water, chemistry, equipment, and workflow — then implement alongside the crew.',
-    href: '/services',
-  },
-  {
-    title: 'Equipment',
-    desc: 'Spec and install the right system for the site. No overselling a mismatched tunnel.',
-    href: '/equipment',
-  },
-  {
-    title: 'Chemistry',
-    desc: 'Presoaks, tri-foam, wheel & tire, protectants — quoted by size, dialed to the water.',
-    href: '/chemistry',
-  },
-  {
-    title: 'Preventive maintenance',
-    desc: 'Catch a failed foot valve before Saturday volume dies. Keep the bays open.',
-    href: '/preventive-maintenance',
-  },
-];
+import { PHOTO_WATER } from '../../data/site';
 ---
 
-<section class="cwm-home-section">
-  <div class="cwm-home-wrap">
-    <div class="cwm-home-head">
-      <p class="cwm-eyebrow">What this company actually does</p>
-      <h2 class="cwm-h2">Match the soap to the water, then keep the tunnel moving.</h2>
-      <p class="cwm-lead">
-        Most washes over-dose chemistry to hide a water-profile or a tired injector. The work is
-        dilution, reclaim, and a PM cadence.
-      </p>
-    </div>
-    <div class="cwm-cards cwm-cards-2">
-      {pillars.map((p) => (
-        <a href={p.href} class="cwm-card">
-          <h3>{p.title}</h3>
-          <p>{p.desc}</p>
-        </a>
-      ))}
-    </div>
+<section class="cwm-chapter">
+  <figure class="cwm-chapter-photo">
+    <img src={PHOTO_WATER} alt="Wash chemistry in water" width="1200" height="1400" />
+  </figure>
+  <div class="cwm-chapter-copy">
+    <p class="cwm-mono">01 — The work</p>
+    <h2>Match the soap<br />to the water.</h2>
+    <p>
+      Most tunnels over-dose chemistry to hide a water profile or a tired injector. We set dilution,
+      reclaim, and a PM cadence that catches a failed foot valve before Saturday volume dies.
+    </p>
+    <ul class="cwm-plain-list">
+      <li><a href="/chemistry">Chemistry</a> — presoak, tri-foam, wheel, protectant. Quoted, not sloganeered.</li>
+      <li><a href="/equipment">Equipment</a> — spec and install for the site you actually have.</li>
+      <li><a href="/preventive-maintenance">Maintenance</a> — keep the bays open.</li>
+    </ul>
   </div>
 </section>

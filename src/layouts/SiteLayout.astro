@@ -1,8 +1,6 @@
 ---
 import Header from '../components/site/Header.astro';
 import Footer from '../components/site/Footer.astro';
-import StickyCta from '../components/site/StickyCta.astro';
-import SmsOptIn from '../components/site/SmsOptIn.astro';
 import { SITE_NAME, DEFAULT_OG, SITE_URL } from '../data/site';
 
 interface Props {
@@ -16,11 +14,10 @@ interface Props {
 
 const {
   title,
-  description = 'Car Wash Management — consulting, equipment, chemistry, and preventive maintenance for car wash operators.',
+  description = 'Car Wash Management — tunnel chemistry, equipment, and preventive maintenance for car wash operators.',
   canonical = SITE_URL + '/',
   pageKey = '',
   ogImage = DEFAULT_OG,
-  hideSticky = false,
 } = Astro.props;
 ---
 
@@ -46,20 +43,17 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400&family=Outfit:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/assets/live.css" />
     <link rel="stylesheet" href="/assets/site.css" />
   </head>
   <body data-page={pageKey}>
     <Header current={pageKey} />
-    {pageKey === 'home' || pageKey === 'sms' ? <SmsOptIn variant="full" /> : <SmsOptIn variant="banner" />}
-    <main class="flex-1">
+    <main>
       <slot />
     </main>
     <Footer />
-    {!hideSticky && <StickyCta />}
     <script src="/assets/site-interact.js" is:inline></script>
   </body>
 </html>

@@ -1,6 +1,17 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import { SITE_URL, SMS_DISPLAY, SMS_KEYWORD, EMAIL, PHONE, PHONE_TEL, LEGAL_PRIVACY, LEGAL_TERMS, LEGAL_HOME } from '../data/site';
+import {
+  SITE_URL,
+  SMS_DISPLAY,
+  SMS_KEYWORD,
+  SMS_HREF,
+  EMAIL,
+  PHONE,
+  PHONE_TEL,
+  LEGAL_PRIVACY,
+  LEGAL_TERMS,
+  LEGAL_HOME,
+} from '../data/site';
 ---
 
 <SiteLayout
@@ -8,8 +19,17 @@ import { SITE_URL, SMS_DISPLAY, SMS_KEYWORD, EMAIL, PHONE, PHONE_TEL, LEGAL_PRIV
   description={`Text ${SMS_KEYWORD} to ${SMS_DISPLAY} to opt in to Car Wash Management customer-care SMS. STOP to opt out, HELP for help. Keyword-only.`}
   canonical={`${SITE_URL}/sms`}
   pageKey="sms"
-  hideSticky={true}
 >
+  <section class="cwm-mkt-hero">
+    <div class="cwm-mkt-hero-solid"></div>
+    <div class="cwm-mkt-hero-content">
+      <span class="cwm-eyebrow">SMS program</span>
+      <h1>Text {SMS_KEYWORD} to {SMS_DISPLAY}</h1>
+      <p>Keyword-only customer-care texts. No website form. Consent is not a condition of purchase.</p>
+      <a class="cwm-btn-primary" href={SMS_HREF}>Text {SMS_KEYWORD}</a>
+    </div>
+  </section>
+
   <section class="cwm-legal-page">
     <p>
       Car Wash Services LLC d/b/a Car Wash Management · 7776 Trade Street, San Diego, CA 92121 · FEIN 33-4786509 ·
@@ -18,9 +38,8 @@ import { SITE_URL, SMS_DISPLAY, SMS_KEYWORD, EMAIL, PHONE, PHONE_TEL, LEGAL_PRIV
       <a href={`tel:${PHONE_TEL}`}>{PHONE}</a>
     </p>
     <p>
-      This page is the brand-domain SMS program notice for TCR / 10DLC reviewers. The same keyword-only opt-in is also
-      printed on the homepage. A2P legal copies live at{' '}
-      <a href={LEGAL_HOME}>{LEGAL_HOME}</a> (do not change that host).
+      The same keyword-only opt-in is printed in the footer of every page on this site. A2P legal copies live at
+      <a href={LEGAL_HOME}>{LEGAL_HOME}</a> (that host is not this deploy).
     </p>
     <h2>What the texts are</h2>
     <p>
@@ -29,8 +48,11 @@ import { SITE_URL, SMS_DISPLAY, SMS_KEYWORD, EMAIL, PHONE, PHONE_TEL, LEGAL_PRIV
       VERIFIED.
     </p>
     <p>
-      <a href={LEGAL_PRIVACY}>{LEGAL_PRIVACY}</a>
-      <br />
+      Reply <strong>STOP</strong> to opt out. Reply <strong>HELP</strong> for help. Message frequency varies (up to 8
+      customer-care messages per month, plus replies). Message and data rates may apply.
+    </p>
+    <p>
+      <a href={LEGAL_PRIVACY}>{LEGAL_PRIVACY}</a><br />
       <a href={LEGAL_TERMS}>{LEGAL_TERMS}</a>
     </p>
   </section>

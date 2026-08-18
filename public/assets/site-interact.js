@@ -16,6 +16,17 @@
     return [...(root || document).querySelectorAll(sel)];
   }
 
+  /* ---------- Header film on home ---------- */
+  function initHeader() {
+    const header = $("[data-site-header]");
+    if (!header || document.body.getAttribute("data-page") !== "home") return;
+    const onScroll = () => {
+      header.classList.toggle("is-scrolled", window.scrollY > 24);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
   /* ---------- Nav mega / dropdown ---------- */
   function initNav() {
     $$("[data-nav-mega], [data-nav-drop]").forEach((wrap) => {
@@ -491,6 +502,7 @@
   }
 
   ready(() => {
+    initHeader();
     initNav();
     initMobile();
     initSticky();

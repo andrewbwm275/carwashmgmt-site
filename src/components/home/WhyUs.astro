@@ -1,25 +1,12 @@
 ---
-const items = [
-  { title: 'Operators, not a pitch deck', desc: 'Work started in a Civic, then MCCS contracts, then a chemical plant.' },
-  { title: 'Quoted by size', desc: 'Catalog products are real SKUs. Pricing is a quote, not a fake review.' },
-  { title: 'Water first', desc: 'Chemistry is matched to the site water — not a one-drum-fits-all foam show.' },
-  { title: 'Long-term PM', desc: 'We stay involved so injectors, foot valves, and reclaim do not surprise you.' },
-];
+import { PHOTO_TUNNEL } from '../../data/site';
 ---
 
-<section class="cwm-home-section">
-  <div class="cwm-home-wrap">
-    <div class="cwm-home-head">
-      <p class="cwm-eyebrow">Why operators call</p>
-      <h2 class="cwm-h2">Built from real wash work.</h2>
-    </div>
-    <div class="cwm-cards cwm-cards-4">
-      {items.map((item) => (
-        <div class="cwm-card">
-          <h3>{item.title}</h3>
-          <p>{item.desc}</p>
-        </div>
-      ))}
-    </div>
+<section class="cwm-close">
+  <img src={PHOTO_TUNNEL} alt="" width="1600" height="900" />
+  <div class="cwm-close-copy">
+    <p class="cwm-mono">Consult</p>
+    <h2>Bring the water report.<br />We’ll talk injectors.</h2>
+    <a href="/book-a-call" class="cwm-btn-primary">Book a consult</a>
   </div>
 </section>

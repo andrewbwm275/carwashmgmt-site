@@ -1,7 +1,4 @@
 ---
-/**
- * Shared marketing page shell with hero + content slot.
- */
 import SiteLayout from './SiteLayout.astro';
 import { SITE_URL } from '../data/site';
 
@@ -30,12 +27,12 @@ const {
   heroImage,
   darkHero = true,
   ctaHref = '/book-a-call',
-  ctaLabel = 'Book a Free Strategy Call →',
+  ctaLabel = 'Book a consult',
 } = Astro.props;
 ---
 
 <SiteLayout title={title} description={description} canonical={`${SITE_URL}${path}`} pageKey={pageKey}>
-  <section class={`cwm-mkt-hero ${darkHero ? '' : 'cwm-mkt-hero--light'}`} style={darkHero ? undefined : 'padding:80px 24px;color:#0f172a;background:#fff'}>
+  <section class="cwm-mkt-hero">
     {heroImage ? (
       <div class="cwm-mkt-hero-bg">
         <img src={heroImage} alt="" />
@@ -44,12 +41,10 @@ const {
       <div class="cwm-mkt-hero-solid"></div>
     ) : null}
     <div class="cwm-mkt-hero-content">
-      {badge && (
-        <span class="cwm-eyebrow" style={darkHero ? undefined : ''}>{badge}</span>
-      )}
+      {badge && <span class="cwm-eyebrow">{badge}</span>}
       <h1>{headline}</h1>
-      {subhead && <p style={darkHero ? undefined : 'color:#64748b'}>{subhead}</p>}
-      <a href={ctaHref} class="cwm-btn-primary cwm-btn-lg">{ctaLabel}</a>
+      {subhead && <p>{subhead}</p>}
+      <a href={ctaHref} class="cwm-btn-primary">{ctaLabel}</a>
     </div>
   </section>
   <slot />

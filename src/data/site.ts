@@ -21,6 +21,12 @@ export const LOGO =
 export const LOGO_FOOT = LOGO;
 export const HERO_HOME =
   'https://media.base44.com/images/public/699f163455fdaf19c59586b8/a49278099_hero.png';
+export const PHOTO_WATER =
+  'https://media.base44.com/images/public/699f163455fdaf19c59586b8/bcc63916d_pexels-nguyendesigner-243971.jpg';
+export const PHOTO_FIELD =
+  'https://media.base44.com/images/public/699f163455fdaf19c59586b8/f50cc0d88_image.png';
+export const PHOTO_TUNNEL =
+  'https://media.base44.com/images/public/699f163455fdaf19c59586b8/91d199782_pexels-fotios-photos-14513938.jpg';
 export const CALENDLY_URL = 'https://calendly.com/andrew-carwashmgmt';
 
 export const SOCIAL = {

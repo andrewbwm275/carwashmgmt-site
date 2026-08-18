@@ -1,120 +1,46 @@
 ---
-import { PHONE, PHONE_TEL, HOURS, NAV, SMS_DISPLAY, SMS_HREF, SMS_KEYWORD } from '../../data/site';
-
 interface Props {
   current?: string;
 }
 const { current = '' } = Astro.props;
 
-function isActive(href: string) {
-  if (href === '/') return current === 'home' || current === '';
-  const key = href.replace(/^\//, '');
-  return current === key || current.startsWith(key);
-}
+const links = [
+  { href: '/chemistry', label: 'Chemistry', key: 'chemistry' },
+  { href: '/equipment', label: 'Equipment', key: 'equipment' },
+  { href: '/about', label: 'Story', key: 'about' },
+  { href: '/contact', label: 'Contact', key: 'contact' },
+];
 ---
-
-<div class="cwm-topbar">
-  <div class="flex items-center">
-    <a href={`tel:${PHONE_TEL}`}>
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-      Call {PHONE}
-    </a>
-    <a href={SMS_HREF} class="cwm-topbar-sms">Text {SMS_KEYWORD} to {SMS_DISPLAY}</a>
-    <span class="cwm-topbar-meta">{HOURS}</span>
-  </div>
-</div>
 
 <header class="cwm-header" data-site-header>
   <div class="cwm-header-inner">
-    <a href="/" class="cwm-logo">
-      Car Wash <span>Management</span>
-    </a>
-
+    <a href="/" class="cwm-logo">Car Wash <em>Management</em></a>
     <nav class="cwm-nav" aria-label="Main">
-      {
-        NAV.main.map((item) => {
-          const active = isActive(item.href);
-          const linkClass = `cwm-nav-link${active ? ' is-active' : ''}`;
-          if (item.mega) {
-            return (
-              <div class="cwm-nav-wrap" data-nav-mega>
-                <a href={item.href} class={linkClass}>
-                  {item.label}
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg>
-                </a>
-                <div class="cwm-mega" data-mega-panel>
-                  <div class="cwm-mega-panel">
-                    {item.items?.map((sub) => (
-                      <a href={sub.href} class="cwm-mega-item">
-                        <strong>{sub.label}</strong>
-                        <span>{sub.desc}</span>
-                      </a>
-                    ))}
-                    <a href="/book-a-call" class="cwm-mega-cta">
-                      <div class="eyebrow">Not sure where to start?</div>
-                      <div class="title">Book a free consultation</div>
-                      <div class="sub">30 minutes. We'll find your biggest opportunity.</div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            );
-          }
-          if (item.dropdown) {
-            return (
-              <div class="cwm-nav-wrap" data-nav-drop>
-                <a href={item.href} class={linkClass}>
-                  {item.label}
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg>
-                </a>
-                <div class="cwm-drop" data-drop-panel>
-                  <div class="cwm-drop-panel">
-                    {item.dropdown.map((sub) => (
-                      <a href={sub.href} class="cwm-drop-item">
-                        {sub.label}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            );
-          }
-          return (
-            <a href={item.href} class={linkClass}>
-              {item.label}
-            </a>
-          );
-        })
-      }
+      {links.map((l) => (
+        <a href={l.href} class:list={['cwm-nav-link', current === l.key && 'is-active']}>
+          {l.label}
+        </a>
+      ))}
     </nav>
-
     <div class="cwm-header-actions">
-      <a href="/book-a-call" class="cwm-btn-primary cwm-btn-header-cta">
-        Book a call
-      </a>
+      <a href="/book-a-call" class="cwm-nav-cta">Consult</a>
       <button type="button" class="cwm-mobile-toggle" data-mobile-toggle aria-label="Open menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /></svg>
+        <span></span><span></span>
       </button>
     </div>
   </div>
 </header>
 
 <div id="cwm-mobile-nav" hidden>
-  <button type="button" data-mobile-close aria-label="Close menu">×</button>
+  <button type="button" data-mobile-close aria-label="Close menu">Close</button>
   <nav>
     <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/solutions">Services</a>
-    <a href="/services" class="sub">Consultation</a>
-    <a href="/equipment" class="sub">Equipment</a>
-    <a href="/chemistry" class="sub">Chemistry</a>
-    <a href="/preventive-maintenance" class="sub">Preventive Maintenance</a>
-    <a href="/results">Results</a>
-    <a href="/testimonials" class="sub">Testimonials</a>
-    <a href="/blog">Blog</a>
-    <a href="/contact">Contact Us</a>
-    <a href="/sms">Text START for SMS</a>
-    <a href="/book-a-call" class="cwm-btn-primary">Book a call</a>
-    <a href="/book-a-call" class="cwm-btn-secondary" style="margin-top:8px;color:#fff;background:transparent;border-color:rgba(255,255,255,.3)">Book a Call</a>
+    <a href="/chemistry">Chemistry</a>
+    <a href="/equipment">Equipment</a>
+    <a href="/preventive-maintenance">Maintenance</a>
+    <a href="/about">Story</a>
+    <a href="/contact">Contact</a>
+    <a href="/sms">SMS program</a>
+    <a href="/book-a-call" class="cwm-nav-cta">Book a consult</a>
   </nav>
 </div>

@@ -1,46 +1,43 @@
 # OUTBOX — CWM Site
 
-From: CWM Site / Jarvis. Updated 2026-08-18 ~3:56 AM PT. Do not SMS-test. Do not resubmit.
+From: CWM Site. Updated 2026-08-18 ~4:25 AM PT. Do not SMS-test. Do not resubmit 10DLC. Do not touch legal.carwashmgmt.com.
 
 ## Status
 
-**Crawlable START HTML is live on GitHub Pages.** Campaign 6 was **not** resubmitted. Wrangler is **not** logged in (no Cloudflare Pages deploy this turn). `legal.carwashmgmt.com` left alone (still 200).
+Production GitHub Pages restyled as an editorial site (Newsreader + Outfit, photography, SMS in a designed **footer** program strip — not a dump at the top). Hard-refresh:
+
+**[https://andrewbwm275.github.io/carwashmgmt-site/](https://andrewbwm275.github.io/carwashmgmt-site/)**
+
+START / STOP / HELP / +1 619-914-6819 remain in HTML source (`id="sms-opt-in"` in the footer). Same keywords on [/sms](https://andrewbwm275.github.io/carwashmgmt-site/sms/). No live.css Tailwind. No fake testimonials or logos.
 
 | URL | Result |
 |---|---|
-| [https://andrewbwm275.github.io/carwashmgmt-site/](https://andrewbwm275.github.io/carwashmgmt-site/) | **200**, START / STOP / HELP / 619-914-6819 / legal privacy+terms in raw HTML (`id="sms-opt-in"`) |
-| [https://andrewbwm275.github.io/carwashmgmt-site/sms/](https://andrewbwm275.github.io/carwashmgmt-site/sms/) | **200** keyword-only program page |
-| [https://andrewbwm275.github.io/cwm-vision/](https://andrewbwm275.github.io/cwm-vision/) | **200** designed vision site (`noindex`, not a competing SMS homepage) |
-| [https://www.carwashmgmt.com/](https://www.carwashmgmt.com/) | Still **Base44 JS** (`#root`). DNS `www` CNAME → `base44.onrender.com` |
-| [https://legal.carwashmgmt.com/](https://legal.carwashmgmt.com/) | **200** (untouched) |
-| [https://legal.carwashmgmt.com/privacy-policy.html](https://legal.carwashmgmt.com/privacy-policy.html) | **200** |
-| [https://legal.carwashmgmt.com/terms-and-conditions.html](https://legal.carwashmgmt.com/terms-and-conditions.html) | **200** |
+| [https://andrewbwm275.github.io/carwashmgmt-site/](https://andrewbwm275.github.io/carwashmgmt-site/) | Restyle live. START in footer HTML |
+| [https://andrewbwm275.github.io/carwashmgmt-site/sms/](https://andrewbwm275.github.io/carwashmgmt-site/sms/) | Program page + footer strip |
+| [https://www.carwashmgmt.com/](https://www.carwashmgmt.com/) | Still Base44 JS (`#root`). DNS not cut over this turn (per Andrew) |
+| [https://legal.carwashmgmt.com/](https://legal.carwashmgmt.com/) | Untouched |
 
-GitHub Pages custom domain on [carwashmgmt-site](https://github.com/andrewbwm275/carwashmgmt-site) was **cleared** so github.io no longer 301s to Base44. After the www DNS Save, Jarvis will bind `www.carwashmgmt.com` again + Enforce HTTPS.
+Screenshots: [preview/home.png](file:///C:/Users/Andrew/Projects/carwashmgmt-site/preview/home.png) · [preview/home-full.png](file:///C:/Users/Andrew/Projects/carwashmgmt-site/preview/home-full.png) · [preview/sms-strip.png](file:///C:/Users/Andrew/Projects/carwashmgmt-site/preview/sms-strip.png)
 
-Keyword-only: contact form checkbox removed. Opt-in is **only** text START to +1 619-914-6819.
+## What was ugly / what changed
 
-## Pages converted (Astro static HTML, every public route)
+Ugly: github.io linked `/assets/` so CSS 404’d (unstyled dump); lime SMS wall at the top; SaaS-blue Tailwind; fake quotes; system fonts.
 
-Home `/`, About, Services, Solutions, Equipment, Chemistry, Preventive Maintenance, Results, Testimonials, Blog + 12 posts, Contact, Book a call, Calculator, Resources, Water reclaim ROI, CMS guide (noindex), chemical-product index + 23 SKUs, Privacy, Terms, Submit testimonial, **SMS `/sms`**, login/register/forgot/reset (noindex stubs). Snapshot HTML moved to [archive/base44-html](file:///C:/Users/Andrew/Projects/carwashmgmt-site/archive/base44-html) so it cannot overwrite `dist/`.
+Changed: full-bleed photography hero, restrained ink/cream/brass, Newsreader display type, SMS moved to footer strip (still crawlable, no JS). Relative asset paths so github.io actually loads CSS.
 
 ## Draft / path
 
+- [site.css](file:///C:/Users/Andrew/Projects/carwashmgmt-site/public/assets/site.css)
 - [SmsOptIn.astro](file:///C:/Users/Andrew/Projects/carwashmgmt-site/src/components/site/SmsOptIn.astro)
-- Vision: [site-vision/index.html](file:///C:/Users/Andrew/Projects/carwashmgmt-site/site-vision/index.html)
-- Packet (do not paste until www 200): [A2P_CONSOLE_PACKET.txt](file:///C:/Users/Andrew/Projects/jarvis/A2P_CONSOLE_PACKET.txt)
 
 ## NeedFromAndrew
 
-One GoDaddy Save: [carwashmgmt.com DNS](https://dcc.godaddy.com/control/portfolio/carwashmgmt.com/settings?tab=dns) → edit **www** CNAME from `base44.onrender.com` to `andrewbwm275.github.io` → **Save**. Do **not** change `legal`. Do not resubmit 10DLC. After Save, Jarvis verifies https://www.carwashmgmt.com/ has START then binds the custom domain.
-
-Optional later (not this sitting): `npx wrangler login` if you want Cloudflare Pages instead of GitHub Pages.
+Empty for this restyle. www DNS cutover stays Andrew’s when he wants the brand hostname on this HTML. Do not resubmit 10DLC.
 
 ## ClickUp
 
 - [868ktgj3y](https://app.clickup.com/t/868ktgj3y) HTML deploy
-- [868krx86x](https://app.clickup.com/t/868krx86x) 10DLC 30909 — do not resubmit until www START 200
 
 ## SelfImprove
 
-SelfImprove: Binding GitHub Pages custom domain to www while www still CNAMEs to Base44 makes github.io 301 to the JS shell; TCR still sees no START. Proof URL must not redirect until DNS is cut over.
+SelfImprove: A GitHub project site with `href="/assets/…"` is an unstyled dump; TCR still sees START but Andrew sees “hideous.” Relative rewrite + no top-of-page SMS dump.

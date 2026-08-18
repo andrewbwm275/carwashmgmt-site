@@ -1,38 +1,22 @@
 ---
-const steps = [
-  {
-    title: 'Walk the site',
-    desc: 'We review water, injectors, and how the tunnel actually runs — no obligation.',
-  },
-  {
-    title: 'Plan the chemistry and PM',
-    desc: 'A clear plan for dilution, equipment, and a cadence that holds cost-per-car.',
-  },
-  {
-    title: 'Stay on the line',
-    desc: 'Implementation and ongoing support so the Saturday rush does not find the failure first.',
-  },
-];
+import { PHOTO_FIELD } from '../../data/site';
 ---
 
-<section class="cwm-home-section cwm-home-section--alt">
-  <div class="cwm-home-wrap">
-    <div class="cwm-home-head">
-      <p class="cwm-eyebrow">How it works</p>
-      <h2 class="cwm-h2">From first call to a tunnel that holds.</h2>
-      <p class="cwm-lead">Straightforward. Field-first. No boardroom theater.</p>
-    </div>
-    <div class="cwm-cards cwm-cards-3">
-      {steps.map((s, i) => (
-        <div class="cwm-card">
-          <span class="cwm-step-num">{String(i + 1).padStart(2, '0')}</span>
-          <h3>{s.title}</h3>
-          <p>{s.desc}</p>
-        </div>
-      ))}
-    </div>
-    <div class="cwm-center">
-      <a href="/book-a-call" class="cwm-btn-primary cwm-btn-lg">Start a consult</a>
-    </div>
+<section class="cwm-story">
+  <div class="cwm-story-copy">
+    <p class="cwm-mono">03 — Origin</p>
+    <h2>Civic, then MCCS,<br />then a plant.</h2>
+    <p>
+      After a job loss, the founder detailed out of an old Honda Civic. Equipment and client lists
+      from closed shops led to Marine Corps Community Services — repairing a failing wash, then
+      winning FAR-compliant contracts on installations, including Marine Corps Base Hawaii.
+    </p>
+    <p>
+      That field history is the brand: operators, not a boardroom.
+    </p>
+    <a href="/about" class="cwm-text-link">Read the story</a>
   </div>
+  <figure class="cwm-story-photo">
+    <img src={PHOTO_FIELD} alt="Field work" width="1000" height="1200" />
+  </figure>
 </section>

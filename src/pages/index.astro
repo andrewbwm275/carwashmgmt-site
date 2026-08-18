@@ -3,16 +3,14 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 import Hero from '../components/home/Hero.astro';
 import ProvenResults from '../components/home/ProvenResults.astro';
 import Pillars from '../components/home/Pillars.astro';
+import Testimonials from '../components/home/Testimonials.astro';
 import Process from '../components/home/Process.astro';
 import WhyUs from '../components/home/WhyUs.astro';
-import Testimonials from '../components/home/Testimonials.astro';
-import LeadMagnet from '../components/home/LeadMagnet.astro';
-import Faq from '../components/home/Faq.astro';
 import { SITE_URL } from '../data/site';
 ---
 
 <SiteLayout
-  title="Car Wash Management | Tunnel chemistry, equipment, and PM"
+  title="Car Wash Management"
   description="San Diego operator shop: tunnel chemistry, equipment, and preventive maintenance. Text START to +1 619-914-6819 for customer-care SMS. Keyword-only."
   canonical={`${SITE_URL}/`}
   pageKey="home"
@@ -20,9 +18,7 @@ import { SITE_URL } from '../data/site';
   <Hero />
   <ProvenResults />
   <Pillars />
+  <Testimonials />
   <Process />
   <WhyUs />
-  <Testimonials />
-  <LeadMagnet />
-  <Faq />
 </SiteLayout>
