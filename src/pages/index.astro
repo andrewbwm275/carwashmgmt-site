@@ -1,0 +1,28 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Hero from '../components/home/Hero.astro';
+import ProvenResults from '../components/home/ProvenResults.astro';
+import Pillars from '../components/home/Pillars.astro';
+import Process from '../components/home/Process.astro';
+import WhyUs from '../components/home/WhyUs.astro';
+import Testimonials from '../components/home/Testimonials.astro';
+import LeadMagnet from '../components/home/LeadMagnet.astro';
+import Faq from '../components/home/Faq.astro';
+import { SITE_URL } from '../data/site';
+---
+
+<SiteLayout
+  title="Car Wash Management | Turn Your Car Wash Into a Profit Machine"
+  description="We help car wash owners cut chemical waste, eliminate unplanned downtime, and increase per-car profit—with systems built from 15+ years in the field."
+  canonical={`${SITE_URL}/`}
+  pageKey="home"
+>
+  <Hero />
+  <ProvenResults />
+  <Pillars />
+  <Process />
+  <WhyUs />
+  <Testimonials />
+  <LeadMagnet />
+  <Faq />
+</SiteLayout>

@@ -1,0 +1,20 @@
+# Car Wash Services (carwashmgmt.com)
+
+> California's full-service car wash partner — premium chemicals, preventive maintenance, equipment solutions, and expert consulting.
+
+## Main pages
+- Home: https://www.carwashmgmt.com/
+- About: https://www.carwashmgmt.com/about
+- Chemical programs: https://www.carwashmgmt.com/chemistry
+- Preventive maintenance: https://www.carwashmgmt.com/preventive-maintenance
+- Equipment: https://www.carwashmgmt.com/equipment
+- Consulting: https://www.carwashmgmt.com/solutions
+- Results: https://www.carwashmgmt.com/results
+- Blog: https://www.carwashmgmt.com/blog
+- Contact: https://www.carwashmgmt.com/contact
+- Book a call: https://www.carwashmgmt.com/book-a-call
+- ROI calculator: https://www.carwashmgmt.com/calculator
+
+## Contact
+- Phone: (808) 465-2291
+- Email: info@carwashmgmt.com

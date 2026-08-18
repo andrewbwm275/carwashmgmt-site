@@ -1,0 +1,36 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { SITE_URL, BLOG_POSTS } from '../../data/site';
+
+export function getStaticPaths() {
+  return BLOG_POSTS.map((p) => ({ params: { slug: p.slug }, props: { post: p } }));
+}
+
+const { post } = Astro.props;
+---
+
+<SiteLayout
+  title={`${post.title} | Car Wash Management`}
+  description={post.description}
+  canonical={`${SITE_URL}/blog/${post.slug}`}
+  pageKey="blog-post"
+>
+  <article class="max-w-3xl mx-auto px-6 py-16">
+    <a href="/blog" class="text-sm text-[#0779ef] font-semibold hover:underline">← Blog</a>
+    <h1 class="text-4xl font-black text-slate-950 mt-4 mb-4">{post.title}</h1>
+    <p class="text-lg text-slate-600 mb-8 leading-relaxed">{post.description}</p>
+    <div class="prose prose-slate max-w-none text-slate-700 space-y-4 leading-relaxed">
+      <p>
+        Car wash margins are won or lost in the details—chemistry dilution, water reclaim, equipment uptime, and labor throughput.
+        This article outlines practical steps operators use to improve results without expensive guesswork.
+      </p>
+      <p>
+        If you want a site-specific diagnosis, book a free strategy call and we'll walk your operation, identify cost leaks,
+        and give you a clear action plan.
+      </p>
+    </div>
+    <div class="mt-10 p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+      <a href="/book-a-call" class="inline-flex bg-[#0779ef] text-white font-bold px-6 py-3 rounded-xl">Book a Free Strategy Call</a>
+    </div>
+  </article>
+</SiteLayout>

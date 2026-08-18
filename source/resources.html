@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Tools &amp; Guides for Car Wash Operators | Car Wash Services</title>
+<meta name="description" content="Download guides, use our free ROI calculator, and access tools designed to help you run a more profitable wash.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+.navy-bg{background:linear-gradient(145deg,#020c1f 0%,#041232 30%,#071a42 60%,#020c1f 100%);position:relative;overflow:hidden}
+.bp-grid{position:absolute;inset:0;opacity:.06;background-image:linear-gradient(rgba(15,82,251,.25) 1px,transparent 1px),linear-gradient(90deg,rgba(15,82,251,.25) 1px,transparent 1px);background-size:52px 52px;pointer-events:none}
+.rcard{background:#fff;border:1px solid #e8eaf0;border-radius:16px;padding:30px;box-shadow:0 2px 16px rgba(2,19,63,.05);display:flex;flex-direction:column;transition:all .3s}
+.rcard:hover{transform:translateY(-4px);border-color:rgba(15,82,251,.25)}
+</style>
+</head>
+<body data-page="Resources">
+<div id="site-header"></div>
+<main>
+  <section class="navy-bg" style="padding:80px 24px">
+    <div class="bp-grid"></div>
+    <div class="wrap" style="position:relative;z-index:10;max-width:46rem;text-align:center">
+      <span style="display:inline-block;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.4em;color:#0f52fb;margin-bottom:16px">Resources</span>
+      <h1 style="font-size:clamp(2rem,4.5vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin:0 0 16px">Free Tools &amp; Guides for Car Wash Operators</h1>
+      <p style="color:#94a3b8;font-size:17px;line-height:1.6;margin:0 auto;max-width:34rem">Download guides, use our free calculator, and access tools designed to help you run a more profitable wash.</p>
+    </div>
+  </section>
+  <section style="padding:64px 24px;background:#F7F8FA">
+    <div class="wrap"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px" id="res"></div></div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="assets/site.js"></script>
+<script>
+(function(){
+  var res=[
+    {icon:'calculator',badge:'Interactive Tool',title:'Nano Bubble ROI Calculator',d:'See exactly how much you could save on water, chemicals, and maintenance with a free interactive savings estimate.',cta:'Calculate My Savings',link:'calculator.html'},
+    {icon:'book-open',badge:'Free Guide',title:'Boosting Profits Guide',d:'A comprehensive guide to optimizing your car wash for maximum profitability—from chemicals to customer retention.',cta:'Download Free Guide',link:'contact.html'},
+    {icon:'play-circle',badge:'Webinar',title:'Car Wash Optimization Webinar',d:'Watch our recorded webinar covering the top 10 profit killers in car wash operations and how to fix them.',cta:'Watch Webinar',link:'contact.html'},
+    {icon:'clipboard-check',badge:'Checklist',title:'New Build Planning Checklist',d:'Planning a new car wash? This checklist covers everything from site selection to equipment specs to launch day.',cta:'Download Checklist',link:'contact.html'},
+    {icon:'flask-conical',badge:'Worksheet',title:'Chemical Optimization Worksheet',d:'Track your chemical usage, costs, and effectiveness with this easy-to-use worksheet template.',cta:'Get Worksheet',link:'contact.html'}
+  ];
+  document.getElementById('res').innerHTML=res.map(function(r){return '<div class="rcard"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px"><div style="width:48px;height:48px;border-radius:12px;background:rgba(15,82,251,.08);display:flex;align-items:center;justify-content:center"><i data-lucide="'+r.icon+'" style="width:24px;height:24px;color:#0F52FB"></i></div><span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#0F52FB;background:rgba(15,82,251,.08);padding:4px 10px;border-radius:999px">'+r.badge+'</span></div><h3 style="font-size:18px;font-weight:800;color:#02133F;margin:0 0 10px">'+r.title+'</h3><p style="font-size:14px;color:#64748b;line-height:1.6;margin:0 0 20px;flex:1">'+r.d+'</p><a href="'+r.link+'" class="btn btn-blue" style="border-radius:8px;height:42px;font-size:13px;font-weight:700">'+r.cta+' <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a></div>';}).join('');
+  if(window.lucide) lucide.createIcons();
+})();
+</script>
+</body>
+</html>

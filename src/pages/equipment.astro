@@ -1,0 +1,31 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+---
+
+<MarketingLayout
+  title="Equipment | Car Wash Management"
+  description="Car wash equipment selection, installation, upgrades, and repair—spec'd for your site."
+  path="/equipment"
+  pageKey="equipment"
+  badge="Equipment"
+  headline="The Right Equipment. Spec'd for Your Site."
+  subhead="We source, install, and support systems that match your volume, footprint, and profit goals—no overselling."
+>
+  <section class="max-w-5xl mx-auto px-6 py-16 space-y-8">
+    <div class="grid md:grid-cols-3 gap-6">
+      {[
+        { t: 'New Installs', d: 'Full tunnel and in-bay packages designed around your site constraints.' },
+        { t: 'Upgrades', d: 'Controllers, reclaim, dryers, and chemistry delivery that improve cost-per-car.' },
+        { t: 'Repair & Support', d: 'Fast diagnosis and parts support so bays stay open.' },
+      ].map((c) => (
+        <div class="rounded-2xl border border-slate-200 p-6">
+          <h3 class="font-black text-slate-900 mb-2">{c.t}</h3>
+          <p class="text-sm text-slate-600">{c.d}</p>
+        </div>
+      ))}
+    </div>
+    <div class="text-center">
+      <a href="/book-a-call" class="inline-flex bg-[#0779ef] text-white font-bold px-6 py-3 rounded-xl">Talk Equipment Strategy</a>
+    </div>
+  </section>
+</MarketingLayout>

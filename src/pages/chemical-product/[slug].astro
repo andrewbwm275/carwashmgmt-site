@@ -1,0 +1,47 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { products } from '../../data/products.mjs';
+import { SITE_URL } from '../../data/site';
+
+export function getStaticPaths() {
+  return products.map((p) => ({ params: { slug: p.slug }, props: { product: p } }));
+}
+
+const { product } = Astro.props;
+
+function money(n: number | null) {
+  if (n == null) return 'Request quote';
+  return `$${n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+}
+---
+
+<SiteLayout
+  title={`${product.name} | Car Wash Management`}
+  description={product.tagline}
+  canonical={`${SITE_URL}/chemical-product/${product.slug}`}
+  pageKey="chemical-product"
+>
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <a href="/chemistry" class="text-sm text-[#0779ef] font-semibold hover:underline mb-6 inline-block">← Back to Chemistry</a>
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <div class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 aspect-square">
+        <img src={product.image} alt={product.name} class="w-full h-full object-cover" />
+      </div>
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-[#0779ef]">{product.category}</span>
+        <h1 class="text-3xl md:text-4xl font-black text-slate-950 mt-2 mb-3">{product.name}</h1>
+        <p class="text-slate-600 mb-6 leading-relaxed">{product.description}</p>
+        <div class="text-2xl font-black text-slate-900 mb-2">{money(product.prices['5 GAL'])} <span class="text-sm font-medium text-slate-500">/ 5 GAL</span></div>
+        <ul class="text-sm text-slate-600 space-y-2 mb-8">
+          {product.features.map((f: string) => (
+            <li class="flex gap-2"><span class="text-[#0779ef]">✓</span>{f}</li>
+          ))}
+        </ul>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/chemistry#shop" class="inline-flex justify-center bg-[#0779ef] text-white font-bold px-6 py-3 rounded-xl">Add via Chemistry Shop</a>
+          <a href="/book-a-call" class="inline-flex justify-center border border-slate-300 font-semibold px-6 py-3 rounded-xl">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

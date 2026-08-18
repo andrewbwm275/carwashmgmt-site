@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface Props {
+  title: string;
+  heading: string;
+  text: string;
+  ctaHref: string;
+  ctaLabel: string;
+  path: string;
+}
+
+const { title, heading, text, ctaHref, ctaLabel, path } = Astro.props;
+---
+
+<BaseLayout title={title} description={heading} canonicalPath={path} dataPage="Contact" noindex={true}>
+  <section
+    style="min-height:60vh;display:flex;align-items:center;justify-content:center;padding:48px 24px;background:#f8fafc"
+  >
+    <div
+      style="max-width:28rem;width:100%;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:40px;text-align:center;box-shadow:0 4px 24px rgba(2,19,63,.06)"
+    >
+      <h1 style="font-size:24px;font-weight:900;color:#02133F;margin:0 0 12px">{heading}</h1>
+      <p style="color:#64748b;line-height:1.6;margin:0 0 24px">{text}</p>
+      <a
+        href={ctaHref}
+        class="btn btn-blue"
+        style="display:inline-flex;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700">{ctaLabel}</a
+      >
+    </div>
+  </section>
+</BaseLayout>

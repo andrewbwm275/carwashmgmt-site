@@ -1,0 +1,113 @@
+---
+import {
+  SMS_DISPLAY,
+  SMS_E164,
+  SMS_KEYWORD,
+  SMS_HREF,
+  LEGAL_HOME,
+  LEGAL_PRIVACY,
+  LEGAL_TERMS,
+  EMAIL,
+  PHONE,
+  PHONE_TEL,
+} from '../../data/site';
+
+interface Props {
+  variant?: 'full' | 'banner' | 'footer';
+}
+const { variant = 'full' } = Astro.props;
+---
+
+{
+  variant === 'banner' && (
+    <aside class="cwm-sms-banner" id="sms-opt-in" aria-label="SMS customer-care opt-in">
+      <p>
+        <strong>Customer-care SMS:</strong> Text <strong>{SMS_KEYWORD}</strong> to{' '}
+        <a href={SMS_HREF}>{SMS_DISPLAY}</a> to opt in. Keyword-only — no web form. Consent is not a
+        condition of purchase. Reply <strong>STOP</strong> to opt out, <strong>HELP</strong> for help.
+        Message frequency varies (up to 8 msgs/month plus replies). Message and data rates may apply.{' '}
+        <a href={LEGAL_PRIVACY}>Privacy</a> · <a href={LEGAL_TERMS}>Terms</a> ·{' '}
+        <a href="/sms">SMS program</a>
+      </p>
+    </aside>
+  )
+}
+
+{
+  variant === 'footer' && (
+    <div class="cwm-sms-footer" id="sms-footer">
+      <h4>Customer-care SMS</h4>
+      <p>
+        Opt in by texting <strong>{SMS_KEYWORD}</strong> to{' '}
+        <a href={`tel:${SMS_E164}`}>{SMS_DISPLAY}</a>. Keyword-only. No website form, checkbox, or
+        in-person consent. Consent is not a condition of purchase.
+      </p>
+      <p>
+        Reply <strong>STOP</strong> to opt out. Reply <strong>HELP</strong> for help, email{' '}
+        <a href={`mailto:${EMAIL}`}>{EMAIL}</a>, or call <a href={`tel:${PHONE_TEL}`}>{PHONE}</a>.
+        Message frequency varies. You may receive up to 8 customer-care messages per month, plus
+        replies. Message and data rates may apply.
+      </p>
+      <p>
+        We do not share, sell, or provide your mobile phone number or messaging consent data to third
+        parties or affiliates for marketing or promotional purposes.{' '}
+        <a href={LEGAL_PRIVACY}>Privacy Policy</a> · <a href={LEGAL_TERMS}>Terms &amp; Conditions</a> ·{' '}
+        <a href={LEGAL_HOME}>SMS program page</a>
+      </p>
+    </div>
+  )
+}
+
+{
+  variant === 'full' && (
+    <section class="cwm-sms-full" id="sms-opt-in" aria-labelledby="sms-opt-in-heading">
+      <p class="cwm-sms-kicker">SMS customer-care program</p>
+      <h2 id="sms-opt-in-heading">Text {SMS_KEYWORD} to {SMS_DISPLAY}</h2>
+      <p class="cwm-sms-lead">
+        The only way to opt in to Car Wash Management customer-care texts is to text the keyword{' '}
+        <strong>{SMS_KEYWORD}</strong> to <strong>{SMS_DISPLAY}</strong>. There is no web form,
+        checkbox, paper form, or in-person consent for this program. Consent is not a condition of
+        purchase.
+      </p>
+      <p>
+        <a class="cwm-sms-cta" href={SMS_HREF}>Text {SMS_KEYWORD} to {SMS_DISPLAY}</a>
+      </p>
+      <p>
+        You will receive this confirmation:{' '}
+        <em>
+          Car Wash Management: You are subscribed to recurring customer-care texts from Car Wash
+          Management. Msg frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out,
+          HELP for help.
+        </em>
+      </p>
+      <ul>
+        <li>
+          <strong>STOP</strong> — opt out. You will receive a confirmation and no further SMS unless
+          you opt in again.
+        </li>
+        <li>
+          <strong>HELP</strong> — help. Or email <a href={`mailto:${EMAIL}`}>{EMAIL}</a> or call{' '}
+          <a href={`tel:${PHONE_TEL}`}>{PHONE}</a>.
+        </li>
+        <li>
+          Message frequency varies. You may receive up to 8 customer-care messages per month, plus
+          replies to messages you send us. Message and data rates may apply.
+        </li>
+      </ul>
+      <p>
+        We do not share, sell, or provide your mobile phone number or messaging consent data to third
+        parties or affiliates for marketing or promotional purposes. Information obtained as part of
+        the SMS consent process is not shared with third parties or affiliates.
+      </p>
+      <p>
+        <a href={LEGAL_PRIVACY}>Privacy Policy</a>
+        {' · '}
+        <a href={LEGAL_TERMS}>Terms &amp; Conditions</a>
+        {' · '}
+        <a href={LEGAL_HOME}>legal.carwashmgmt.com</a>
+        {' · '}
+        <a href="/sms">SMS program on this site</a>
+      </p>
+    </section>
+  )
+}

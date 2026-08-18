@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Wash Cost Calculator | Free ROI Tool | Car Wash Services</title>
+<meta name="description" content="Calculate your car wash cost-per-car, chemical spend, and identify profit opportunities. Free interactive tool from Car Wash Services.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+.cinput{width:100%;margin-top:4px;padding:10px 12px;border:1px solid #e2e8f0;border-radius:8px;font-size:15px;background:#fff;color:#0f172a}
+.cinput:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.15)}
+.clabel{font-size:14px;font-weight:600;color:#334155;display:block}
+.cstep{display:none}.cstep.active{display:block}
+.cdot{width:32px;height:32px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;background:#f1f5f9;color:#94a3b8}
+.cdot.on{background:#2563eb;color:#fff}
+</style>
+</head>
+<body data-page="Calculator">
+<div id="site-header"></div>
+<main>
+  <!-- Hero -->
+  <section style="position:relative;padding:64px 24px;overflow:hidden;min-height:320px">
+    <div style="position:absolute;inset:0"><img src="https://media.base44.com/images/public/699f163455fdaf19c59586b8/91d199782_pexels-fotios-photos-14513938.jpg" alt="Nano Bubble" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,121,239,.75) 0%,rgba(10,20,50,.82) 100%)"></div></div>
+    <div style="position:relative;z-index:10;max-width:48rem;margin:0 auto;text-align:center">
+      <span style="display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;padding:6px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.6);color:rgba(255,255,255,.9)">ROI &amp; Profit Tools</span>
+      <h1 style="color:#fff;margin:0 0 16px;font-size:clamp(2rem,5vw,3rem);font-weight:900;text-transform:uppercase">Nano Bubble ROI Calculator</h1>
+      <p style="color:rgba(255,255,255,.8);font-size:18px;max-width:36rem;margin:0 auto 16px">See exactly how much you can save by switching to Nano Bubble technology.</p>
+      <div style="margin:0 auto;width:64px;height:4px;border-radius:999px;background:rgba(255,255,255,.7)"></div>
+    </div>
+  </section>
+
+  <!-- VSL -->
+  <section style="padding:40px 24px;background:#fff"><div style="max-width:48rem;margin:0 auto"><div style="position:relative;width:100%;padding-bottom:56.25%"><iframe style="position:absolute;inset:0;width:100%;height:100%;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.12)" src="https://www.youtube.com/embed/2FBKYZ_iDOo" title="Nano Bubble Technology" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div></section>
+
+  <!-- Progress -->
+  <section style="padding:32px 24px;background:#fff;border-bottom:1px solid #f1f5f9"><div style="max-width:36rem;margin:0 auto"><div style="display:flex;align-items:center;justify-content:space-between">
+    <div style="display:flex;align-items:center;gap:8px"><div class="cdot on" id="dot1">1</div><span style="font-size:14px;font-weight:500;color:#0f172a">Your Wash</span></div>
+    <div style="flex:1;height:2px;margin:0 8px;background:#e2e8f0" id="bar1"></div>
+    <div style="display:flex;align-items:center;gap:8px"><div class="cdot" id="dot2">2</div><span style="font-size:14px;font-weight:500;color:#94a3b8" id="lbl2">Your Info</span></div>
+    <div style="flex:1;height:2px;margin:0 8px;background:#e2e8f0" id="bar2"></div>
+    <div style="display:flex;align-items:center;gap:8px"><div class="cdot" id="dot3">3</div><span style="font-size:14px;font-weight:500;color:#94a3b8" id="lbl3">Results</span></div>
+  </div></div></section>
+
+  <!-- Body -->
+  <section style="padding:48px 24px;background:#f8fafc;min-height:60vh"><div style="max-width:36rem;margin:0 auto">
+
+    <!-- STEP 1 -->
+    <div class="cstep active" id="step1">
+      <h2 style="font-size:24px;font-weight:700;color:#0f172a;margin:0 0 4px">How much is inefficient water costing you?</h2>
+      <p style="color:#475569;margin:0 0 28px">See exactly how much you can save by switching to Nano Bubble technology. Reduce chemical usage, lower water bills, and cut maintenance costs instantly.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:16px">
+        <div><label class="clabel">Avg. Monthly Washes *</label><input class="cinput" id="cal-cars" type="number" min="0" placeholder="e.g. 10,000"></div>
+        <div><label class="clabel">Avg. Monthly Water Bill *</label><input class="cinput" id="cal-water" type="number" min="0" placeholder="e.g. 3,500"></div>
+        <div><label class="clabel">Avg. Monthly Chemical Cost *</label><input class="cinput" id="cal-chem" type="number" min="0" placeholder="e.g. 5,000"></div>
+        <div><label class="clabel">Quarterly Pit Cleaning Cost *</label><input class="cinput" id="cal-pit" type="number" min="0" placeholder="e.g. 2,500"></div>
+      </div>
+      <div style="margin-bottom:24px"><label class="clabel">Monthly Maintenance Cost *</label><input class="cinput" id="cal-maint" type="number" min="0" placeholder="e.g. 1,500"></div>
+      <button class="btn btn-blue" id="to-step2" style="width:100%;padding:18px;font-size:16px;border-radius:8px;gap:8px">Calculate Annual ROI <i data-lucide="arrow-right" style="width:20px;height:20px"></i></button>
+      <p style="text-align:center;font-size:12px;color:#64748b;margin-top:16px">Estimated savings based on industry standard Nano Bubble efficiency.</p>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="cstep" id="step2">
+      <div style="text-align:center;margin-bottom:32px"><div style="width:56px;height:56px;background:#dbeafe;border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px"><i data-lucide="lock" style="width:28px;height:28px;color:#2563eb"></i></div><h2 style="font-size:24px;font-weight:700;color:#0f172a;margin:0 0 8px">Almost There!</h2><p style="color:#64748b;margin:0">Enter your details to see your full savings report.</p></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:16px">
+        <div><label class="clabel">Full Name *</label><input class="cinput" id="ld-name" placeholder="John Smith"></div>
+        <div><label class="clabel">Email *</label><input class="cinput" id="ld-email" type="email" placeholder="john@example.com"></div>
+        <div><label class="clabel">Phone (Recommended)</label><input class="cinput" id="ld-phone" placeholder="(555) 123-4567"></div>
+        <div><label class="clabel">City / State *</label><input class="cinput" id="ld-city" placeholder="Fresno, CA"></div>
+      </div>
+      <div style="margin-bottom:16px"><label class="clabel"># of Locations</label><input class="cinput" id="ld-loc" type="number" min="1" value="1"></div>
+      <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:#475569;margin-bottom:8px"><input type="checkbox" checked> Email me my full savings report (PDF)</label>
+      <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:#475569;margin-bottom:20px"><input type="checkbox"> Send me the Boosting Profits Guide too</label>
+      <button class="btn btn-blue" id="to-step3" style="width:100%;padding:18px;font-size:16px;border-radius:8px;gap:8px">See My Results <i data-lucide="arrow-right" style="width:20px;height:20px"></i></button>
+      <p style="text-align:center;font-size:12px;color:#94a3b8;margin-top:12px">🔒 Your info is secure and will never be shared.</p>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="cstep" id="step3">
+      <div style="text-align:center;margin-bottom:28px"><span style="display:inline-flex;align-items:center;gap:8px;background:#dcfce7;color:#15803d;font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px"><i data-lucide="check-circle-2" style="width:16px;height:16px"></i> Report emailed — here's your snapshot</span></div>
+      <div style="background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:20px;padding:32px;text-align:center;color:#fff;margin-bottom:20px">
+        <p style="text-transform:uppercase;letter-spacing:.2em;font-size:12px;color:#93c5fd;margin:0 0 8px">Estimated Annual Savings</p>
+        <div id="res-annual" style="font-size:48px;font-weight:900;color:#fff;line-height:1">$0</div>
+        <p style="color:#94a3b8;font-size:14px;margin:8px 0 0"><span id="res-monthly">$0</span>/month · ROI in <span id="res-roi">—</span> months</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:24px">
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px;text-align:center"><i data-lucide="droplets" style="width:22px;height:22px;color:#0ea5e9;margin:0 auto 8px"></i><div id="res-water" style="font-size:22px;font-weight:800;color:#0f172a">$0</div><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.05em">Water / mo</div></div>
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px;text-align:center"><i data-lucide="flask-conical" style="width:22px;height:22px;color:#2563eb;margin:0 auto 8px"></i><div id="res-chem" style="font-size:22px;font-weight:800;color:#0f172a">$0</div><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.05em">Chemical / mo</div></div>
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px;text-align:center"><i data-lucide="wrench" style="width:22px;height:22px;color:#7c3aed;margin:0 auto 8px"></i><div id="res-maint" style="font-size:22px;font-weight:800;color:#0f172a">$0</div><div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.05em">Maintenance / mo</div></div>
+      </div>
+      <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;padding:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+        <div><div style="font-weight:700;color:#0f172a">Confidence score</div><div style="font-size:13px;color:#475569">Based on the detail you provided</div></div>
+        <div id="res-conf" style="font-size:30px;font-weight:900;color:#2563eb">—%</div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="book-a-call.html" class="btn btn-blue" style="flex:1;min-width:180px;padding:16px;border-radius:10px;font-size:15px;gap:8px">Book a Free Strategy Call <i data-lucide="arrow-right" style="width:18px;height:18px"></i></a>
+        <button id="recalc" class="btn btn-outline" style="padding:16px 20px;border-radius:10px;font-size:15px;gap:8px"><i data-lucide="refresh-ccw" style="width:18px;height:18px"></i> Recalculate</button>
+      </div>
+    </div>
+
+  </div></section>
+</main>
+<div id="site-footer"></div>
+<script src="assets/site.js"></script>
+<script>
+(function(){
+  function num(id){var v=parseFloat((document.getElementById(id)||{}).value);return isNaN(v)?0:v;}
+  function money(x){return "$"+Math.round(x).toLocaleString();}
+  function setStep(n){
+    [1,2,3].forEach(function(i){
+      document.getElementById('step'+i).classList.toggle('active', i===n);
+      document.getElementById('dot'+i).classList.toggle('on', i<=n);
+    });
+    document.getElementById('bar1').style.background = n>1?'#2563eb':'#e2e8f0';
+    document.getElementById('bar2').style.background = n>2?'#2563eb':'#e2e8f0';
+    document.getElementById('lbl2').style.color = n>=2?'#0f172a':'#94a3b8';
+    document.getElementById('lbl3').style.color = n>=3?'#0f172a':'#94a3b8';
+    window.scrollTo({top:document.querySelector('#step'+n).getBoundingClientRect().top+window.scrollY-160,behavior:'smooth'});
+    if(window.lucide) lucide.createIcons();
+  }
+  // mirrors calculateSavings() from the source
+  function compute(){
+    var cars=num('cal-cars'), water=num('cal-water'), chem=num('cal-chem'), pit=num('cal-pit'), maint=num('cal-maint');
+    var water_savings = Math.round(water*0.40);
+    var chemical_savings = Math.round(chem*0.30);
+    var avgRevPerHour = cars*12/(30*12);
+    var maintenance_savings = Math.round((pit/3)*0.6 + maint*0.3 + 200);
+    var total_monthly = water_savings + chemical_savings + maintenance_savings;
+    var total_annual = total_monthly*12;
+    var roi = Math.max(2, Math.round(18000/Math.max(total_monthly,1)));
+    var conf=50; if(cars)conf+=20; if(water)conf+=10; if(chem)conf+=10; if(pit)conf+=5; if(maint)conf+=5;
+    return {water_savings,chemical_savings,maintenance_savings,total_monthly,total_annual,roi,conf:Math.min(conf,100)};
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    document.getElementById('to-step2').onclick=function(){
+      if(!num('cal-cars')||!num('cal-water')||!num('cal-chem')){alert('Please fill in the required fields.');return;}
+      setStep(2);
+    };
+    document.getElementById('to-step3').onclick=function(){
+      var name=document.getElementById('ld-name').value, email=document.getElementById('ld-email').value, city=document.getElementById('ld-city').value;
+      if(!name||!email||!city){alert('Please enter your name, email, and city/state.');return;}
+      var r=compute();
+      document.getElementById('res-annual').textContent=money(r.total_annual);
+      document.getElementById('res-monthly').textContent=money(r.total_monthly);
+      document.getElementById('res-roi').textContent=r.roi;
+      document.getElementById('res-water').textContent=money(r.water_savings);
+      document.getElementById('res-chem').textContent=money(r.chemical_savings);
+      document.getElementById('res-maint').textContent=money(r.maintenance_savings);
+      document.getElementById('res-conf').textContent=r.conf+'%';
+      setStep(3);
+    };
+    document.getElementById('recalc').onclick=function(){setStep(1);};
+  });
+})();
+</script>
+</body>
+</html>

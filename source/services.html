@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Services | Car Wash Services</title>
+<meta name="description" content="From free strategy calls to consulting, implementation, training, and ongoing support — the full operational layer for your car wash.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+.navy-bg{background:linear-gradient(145deg,#020c1f 0%,#041232 30%,#071a42 60%,#020c1f 100%);position:relative;overflow:hidden}
+.bp-grid{position:absolute;inset:0;opacity:.06;background-image:linear-gradient(rgba(15,82,251,.25) 1px,transparent 1px),linear-gradient(90deg,rgba(15,82,251,.25) 1px,transparent 1px);background-size:52px 52px;pointer-events:none}
+.svc{background:#fff;border:1px solid #e8eaf0;border-radius:16px;padding:30px;box-shadow:0 2px 16px rgba(2,19,63,.05);display:flex;flex-direction:column}
+</style>
+</head>
+<body data-page="Solutions">
+<div id="site-header"></div>
+<main>
+  <section class="navy-bg" style="padding:80px 24px">
+    <div class="bp-grid"></div>
+    <div class="wrap" style="position:relative;z-index:10;max-width:46rem;text-align:center">
+      <span style="display:inline-block;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.4em;color:#0f52fb;margin-bottom:16px">Services</span>
+      <h1 style="font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;color:#fff;line-height:1.1;margin:0 0 16px">Everything your wash needs — and the team to deliver it.</h1>
+      <p style="color:#94a3b8;font-size:17px;line-height:1.7;margin:0 auto 28px;max-width:34rem">We don't just write reports. We implement the changes alongside your team for real results.</p>
+      <a href="book-a-call.html" class="btn" style="background:#0f52fb;color:#fff;padding:14px 28px;border-radius:6px;font-size:13px;font-weight:700;gap:8px">Book a Free Strategy Call <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
+    </div>
+  </section>
+
+  <section style="padding:80px 24px;background:#F7F8FA">
+    <div class="wrap">
+      <div class="reveal" style="text-align:center;margin-bottom:48px"><span class="eyebrow" style="justify-content:center;margin-bottom:16px">How We Work</span><h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:900;color:#02133F;margin:0">A complete operational partnership.</h2></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px" id="svcs"></div>
+    </div>
+  </section>
+
+  <section style="padding:80px 24px;background:#fff">
+    <div class="wrap" style="max-width:52rem">
+      <div class="reveal" style="text-align:center;margin-bottom:40px"><span class="eyebrow" style="justify-content:center;margin-bottom:16px">Problems We Solve</span><h2 style="font-size:clamp(1.7rem,3.5vw,2.3rem);font-weight:900;color:#02133F;margin:0">Sound familiar?</h2></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px" id="probs"></div>
+    </div>
+  </section>
+
+  <section class="navy-bg" style="padding:80px 24px;text-align:center">
+    <div class="bp-grid"></div>
+    <div class="wrap" style="position:relative;z-index:10;max-width:46rem">
+      <h2 style="font-size:clamp(1.9rem,4vw,3rem);font-weight:900;color:#fff;margin:0 0 16px">Let's Find Your Biggest Opportunity</h2>
+      <p style="color:#94a3b8;font-size:17px;margin:0 0 32px">A no-pressure, no-cost call where we learn about your wash and identify where to start.</p>
+      <a href="book-a-call.html" class="btn" style="background:#0f52fb;color:#fff;padding:16px 36px;border-radius:8px;font-size:15px;font-weight:700;gap:8px">Book Free Strategy Call <i data-lucide="arrow-right" style="width:18px;height:18px"></i></a>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="assets/site.js"></script>
+<script>
+(function(){
+  var svcs=[
+    {icon:'phone',title:'Free Strategy Call',d:'A no-pressure, no-cost call where we learn about your wash and identify your biggest opportunities.',b:['Operational assessment','Revenue opportunity analysis','Cost reduction identification','Custom recommendations','No obligation']},
+    {icon:'clipboard-list',title:'Consulting & Implementation',d:"We don't just write reports—we implement the changes alongside your team for real results.",b:['Full operational audit','Custom profit roadmap','Equipment optimization','Process redesign','Chemistry analysis']},
+    {icon:'users',title:'Training & Staffing',d:'Empower your team with the knowledge and systems to maintain peak performance.',b:['Staff training programs','Standard operating procedures','Quality control systems','Performance metrics']},
+    {icon:'headphones',title:'Ongoing Support',d:'We stay involved long after implementation. Your success is our long-term commitment.',b:['Dedicated account manager','Regular performance reviews','Chemistry adjustments','Emergency support','Continuous optimization']}
+  ];
+  document.getElementById('svcs').innerHTML=svcs.map(function(s){return '<div class="svc"><div style="width:48px;height:48px;border-radius:12px;background:rgba(15,82,251,.08);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><i data-lucide="'+s.icon+'" style="width:24px;height:24px;color:#0F52FB"></i></div><h3 style="font-size:18px;font-weight:800;color:#02133F;margin:0 0 10px">'+s.title+'</h3><p style="font-size:14px;color:#64748b;line-height:1.6;margin:0 0 16px;flex:1">'+s.d+'</p><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px">'+s.b.map(function(x){return '<li style="display:flex;gap:8px;font-size:13px;color:#475569"><i data-lucide="check" style="width:15px;height:15px;color:#0F52FB;flex-shrink:0"></i> '+x+'</li>';}).join('')+'</ul></div>';}).join('');
+  var probs=['High chemical usage & waste','Poor reclaim performance','Pump maintenance failures','Excessive water waste','Inconsistent wash quality','Low conversion/upsell rates','Downtime & throughput bottlenecks','Labor inefficiency'];
+  document.getElementById('probs').innerHTML=probs.map(function(p){return '<div style="display:flex;align-items:center;gap:10px;background:#F7F8FA;border:1px solid #eef0f4;border-radius:10px;padding:14px 16px;font-size:14px;color:#334155"><i data-lucide="alert-circle" style="width:16px;height:16px;color:#ef4444;flex-shrink:0"></i> '+p+'</div>';}).join('');
+  if(window.lucide) lucide.createIcons();
+})();
+</script>
+</body>
+</html>

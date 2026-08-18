@@ -1,0 +1,25 @@
+---
+const items = [
+  { title: 'Results-Driven Approach', desc: 'We focus on measurable improvements in cost, performance, and reliability.' },
+  { title: 'End-to-End Solutions', desc: 'From consulting to implementation, we handle everything.' },
+  { title: 'Built from Real Experience', desc: "We've worked inside car wash operations—not just advised them." },
+  { title: 'Long-Term Support', desc: 'We stay involved to ensure continued performance.' },
+];
+---
+
+<section class="py-16 px-6 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-black text-slate-950 tracking-tight mb-3">Why Car Wash Operators Work With Us</h2>
+      <p class="text-slate-500">Built for operators who care about performance, profitability, and long-term results.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {items.map((item) => (
+        <div class="rounded-2xl border border-slate-200 p-6">
+          <h3 class="font-black text-slate-900 mb-2">{item.title}</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

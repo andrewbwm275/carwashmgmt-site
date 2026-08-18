@@ -1,0 +1,23 @@
+---
+import { BLOG_SLUG_MAP } from '../data/site';
+const mapJson = JSON.stringify(BLOG_SLUG_MAP);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Redirecting…</title>
+    <script is:inline define:vars={{ mapJson }}>
+      const map = JSON.parse(mapJson);
+      const s = new URLSearchParams(location.search).get('slug');
+      if (s && map[s]) location.replace(map[s]);
+      else if (s) location.replace('/blog/' + encodeURIComponent(s));
+      else location.replace('/blog');
+    </script>
+  </head>
+  <body>
+    <p style="padding:48px 24px;text-align:center">Redirecting… <a href="/blog">Go to Blog</a></p>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+---
+const faqs = [
+  {
+    q: 'How much does a consultation cost?',
+    a: "Our initial consultation is completely free. We'll review your operation, identify opportunities, and give you clear next steps with no obligation.",
+  },
+  {
+    q: 'Do you work with single-location operators?',
+    a: "Yes. We work with both single-location owners and multi-site operators. Whether you're just getting started or managing multiple washes, we tailor our approach to your operation.",
+  },
+  {
+    q: 'What areas do you serve?',
+    a: 'We work with clients across the United States and support both on-site and remote consultations depending on your needs.',
+  },
+  {
+    q: 'How quickly can we see results?',
+    a: 'Many clients begin seeing improvements within weeks, especially when addressing chemical usage, maintenance issues, and operational inefficiencies.',
+  },
+  {
+    q: 'What types of problems can you help solve?',
+    a: 'We help reduce chemical and water costs, eliminate downtime, improve wash quality, optimize equipment performance, and increase overall profitability.',
+  },
+  {
+    q: 'What happens after the consultation?',
+    a: "You'll receive a clear breakdown of your operation, key issues, and actionable recommendations. From there, you can choose to implement changes yourself or continue working with us for ongoing support.",
+  },
+];
+---
+
+<section class="py-16 px-6 bg-slate-50">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-black text-slate-950 tracking-tight mb-3">Answers to Common Questions</h2>
+      <p class="text-slate-500">Everything you need to know before getting started.</p>
+    </div>
+    <div class="space-y-3">
+      {faqs.map((f) => (
+        <div class="bg-white rounded-xl border border-slate-200 overflow-hidden" data-faq-item>
+          <button type="button" data-faq-btn class="w-full flex items-center justify-between px-6 py-4 text-left gap-4 group">
+            <span class="font-semibold text-slate-900 text-sm md:text-base group-hover:text-[#0779ef] transition-colors">{f.q}</span>
+            <svg class="w-4 h-4 flex-shrink-0 text-[#0779ef] transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div data-faq-panel class="px-6 pb-4 text-sm text-slate-600 leading-relaxed" hidden>{f.a}</div>
+        </div>
+      ))}
+    </div>
+    <div class="text-center mt-10">
+      <p class="text-sm text-slate-500 mb-1">Still have questions?</p>
+      <p class="text-sm text-slate-600 mb-4">We'll walk through your operation and give you clear answers.</p>
+      <a href="/book-a-call" class="inline-flex items-center gap-2 bg-[#0779ef] text-white font-bold px-6 py-3 rounded-xl">Book Your Free Consultation</a>
+    </div>
+  </div>
+</section>

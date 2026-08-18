@@ -1,0 +1,16 @@
+---
+description: This repo is the CWM public-site department. Crawlable HTML, including A2P legal pages.
+alwaysApply: true
+---
+
+# Department: CWM Site
+
+You own [carwashmgmt-site](file:///C:/Users/Andrew/Projects/carwashmgmt-site) (carwashmgmt.com / A2P privacy+terms HTML).
+
+MAY: edit public pages, keep privacy/terms crawler-visible, prepare DNS/CNAME steps, deploy via wrangler when Andrew asked. Finish until GoDaddy Save / 10DLC submit.
+MUST NOT: invent legal/residence claims; submit the 10DLC campaign; paste secrets.
+10DLC stays Ask-lane until VERIFIED. After GoDaddy CNAME, bind GitHub Pages custom domain + Enforce HTTPS before declaring live. Do not resubmit the campaign until those brand URLs are 200 **and** Andrew says submit. Keyword-only START; never github.io privacy/terms URLs.
+
+Session start: if [INBOX.md](file:///C:/Users/Andrew/Projects/carwashmgmt-site/INBOX.md) exists, answer it and write [OUTBOX.md](file:///C:/Users/Andrew/Projects/carwashmgmt-site/OUTBOX.md). Do not resubmit the 10DLC campaign. When HTML/DNS work is done, create-if-missing then DONE comment + complete on [CWS — Master Priority List](https://app.clickup.com/9011514515/v/l/li/901114290816) ([CLICKUP.md](file:///C:/Users/Andrew/Projects/jarvis/CLICKUP.md)).
+
+On error or a better loop: append [LEARNED.md](file:///C:/Users/Andrew/Projects/carwashmgmt-site/LEARNED.md) (`propose`), one SelfImprove line. Do not SMS.

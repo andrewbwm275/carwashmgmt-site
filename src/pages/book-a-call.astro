@@ -1,0 +1,31 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { SITE_URL, CALENDLY_URL } from '../data/site';
+---
+
+<SiteLayout
+  title="Book a Call | Car Wash Management"
+  description="Book a free strategy call with Car Wash Management."
+  canonical={`${SITE_URL}/book-a-call`}
+  pageKey="book-a-call"
+>
+  <section class="max-w-4xl mx-auto px-6 py-16 text-center">
+    <span class="inline-block text-xs font-bold uppercase tracking-widest text-[#0779ef] border border-blue-100 bg-blue-50 rounded-full px-3 py-1 mb-4">Free Strategy Call</span>
+    <h1 class="text-4xl md:text-5xl font-black text-slate-950 mb-4">Book Your Free Consultation</h1>
+    <p class="text-slate-600 max-w-2xl mx-auto mb-8">
+      30 minutes. We'll identify where you're losing money and outline clear next steps—no obligation.
+    </p>
+    <div class="rounded-2xl border border-slate-200 overflow-hidden bg-white shadow-sm mb-6" style="min-height: 700px">
+      <iframe
+        src={`${CALENDLY_URL}?embed_domain=carwashmgmt.com&embed_type=Inline`}
+        title="Book a call with Car Wash Management"
+        class="w-full"
+        style="height: 700px; border: 0"
+      ></iframe>
+    </div>
+    <p class="text-sm text-slate-500">
+      Prefer email? <a href="/contact" class="text-[#0779ef] font-semibold hover:underline">Contact us</a>
+      or open <a href={CALENDLY_URL} target="_blank" rel="noopener" class="text-[#0779ef] font-semibold hover:underline">Calendly directly</a>.
+    </p>
+  </section>
+</SiteLayout>

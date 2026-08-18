@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  pageKey?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = "Car Wash Management — consulting, equipment, chemistry, and preventive maintenance for car wash operators.",
+  canonical = "https://www.carwashmgmt.com/",
+  pageKey = "",
+  ogImage = "https://media.base44.com/images/public/699f163455fdaf19c59586b8/f50cc0d88_image.png",
+} = Astro.props;
+
+const siteName = "Car Wash Management";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/assets/live.css" />
+  </head>
+  <body data-page={pageKey}>
+    <div class="cwm-live-root">
+      <slot />
+    </div>
+    <script src="/assets/live-interact.js" is:inline></script>
+  </body>
+</html>

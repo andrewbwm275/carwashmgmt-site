@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonials | Car Wash Services</title>
+<meta name="description" content="Real results from car wash operators who've improved efficiency, margins, and reliability with Car Wash Services.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+.navy-bg{background:linear-gradient(145deg,#020c1f 0%,#041232 30%,#071a42 60%,#020c1f 100%);position:relative;overflow:hidden}
+.bp-grid{position:absolute;inset:0;opacity:.06;background-image:linear-gradient(rgba(15,82,251,.25) 1px,transparent 1px),linear-gradient(90deg,rgba(15,82,251,.25) 1px,transparent 1px);background-size:52px 52px;pointer-events:none}
+</style>
+</head>
+<body data-page="Results">
+<div id="site-header"></div>
+<main>
+  <section class="navy-bg" style="padding:80px 24px">
+    <div class="bp-grid"></div>
+    <div class="wrap" style="position:relative;z-index:10;max-width:46rem;text-align:center">
+      <span style="display:inline-block;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.4em;color:#0f52fb;margin-bottom:16px">Success Stories</span>
+      <h1 style="font-size:clamp(2rem,4.5vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin:0 0 16px">Real Results from Car Wash Operators</h1>
+      <p style="color:#94a3b8;font-size:17px;line-height:1.6;margin:0 auto 28px;max-width:34rem">Join hundreds of operators who've transformed their businesses with our solutions.</p>
+      <a href="submit-testimonial.html" class="btn" style="background:#0f52fb;color:#fff;padding:14px 28px;border-radius:6px;font-size:13px;font-weight:700;gap:8px">Share Your Story <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
+    </div>
+  </section>
+  <section style="padding:64px 24px;background:#F7F8FA">
+    <div class="wrap"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px" id="t"></div></div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="assets/site.js"></script>
+<script>
+(function(){
+  var t=[
+    {h:'Improved Efficiency & Reduced Waste',q:"Car Wash Management helped us dial in our chemical setup and processes. Within the first month, we saw better consistency and less product waste. It's made a noticeable difference in both performance and cost control.",r:'Site Operator – Southern California'},
+    {h:'Stronger Operations & Better Margins',q:"Their recommendations were practical and easy to implement. We've tightened up our processes and improved overall efficiency across the wash. It's been a solid investment for our operation.",r:'Owner – Express Wash, California'},
+    {h:'Industry Experience That Shows',q:"They understand how a car wash actually runs day to day. From setup to ongoing adjustments, everything was straightforward and effective. You can tell they've been in the field.",r:'Owner – New Build, California'},
+    {h:'Reliable Support When It Matters',q:"Any time we needed support or had questions, their team was responsive and helpful. That level of consistency makes a big difference when you're running a busy site.",r:'Full-Service Operator – California'},
+    {h:'Smoother, More Consistent Results',q:"From chemical performance to overall wash quality, everything runs smoother now. We're seeing more consistent results and fewer issues day to day.",r:'Tunnel Operator – California'}
+  ];
+  document.getElementById('t').innerHTML=t.map(function(x){return '<div style="background:#fff;border:1px solid #e8eaf0;border-radius:16px;padding:28px;box-shadow:0 2px 16px rgba(2,19,63,.05);display:flex;flex-direction:column"><div style="display:flex;gap:2px;margin-bottom:14px">'+Array(5).join('<i data-lucide="star" style="width:16px;height:16px;color:#f59e0b;fill:#f59e0b"></i>')+'<i data-lucide="star" style="width:16px;height:16px;color:#f59e0b;fill:#f59e0b"></i></div><h3 style="font-size:16px;font-weight:800;color:#02133F;margin:0 0 12px">'+x.h+'</h3><p style="font-size:14px;color:#475569;line-height:1.7;margin:0 0 20px;flex:1">"'+x.q+'"</p><div style="font-size:13px;font-weight:600;color:#94a3b8;border-top:1px solid #f1f5f9;padding-top:14px">'+x.r+'</div></div>';}).join('');
+  if(window.lucide) lucide.createIcons();
+})();
+</script>
+</body>
+</html>

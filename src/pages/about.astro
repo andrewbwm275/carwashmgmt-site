@@ -1,0 +1,54 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+---
+
+<MarketingLayout
+  title="About | Car Wash Management"
+  description="Built for car wash owners who want more than just equipment. Our story, pillars, and approach."
+  path="/about"
+  pageKey="about"
+  badge="About CWM"
+  headline="Built for Car Wash Owners Who Want More Than Just Equipment"
+  subhead="We don't just sell solutions—we engineer profitable, efficient, and scalable car wash operations from the ground up."
+  heroImage="https://media.base44.com/images/public/699f163455fdaf19c59586b8/f50cc0d88_image.png"
+>
+  <section class="max-w-5xl mx-auto px-6 py-16 space-y-12">
+    <div>
+      <span class="text-xs font-bold uppercase tracking-widest text-[#0779ef]">Our Story</span>
+      <h2 class="text-3xl font-black text-slate-950 mt-2 mb-4">Founded on Grit</h2>
+      <div class="prose prose-slate max-w-none text-slate-600 space-y-4 leading-relaxed">
+        <p class="font-semibold text-slate-800">Car Wash Management didn't start in a boardroom—it started with determination and a willingness to do whatever it took.</p>
+        <p>After losing a job, our founder began offering mobile car detailing services out of the back of an old Honda Civic. With limited equipment and a lot of persistence, he went door to door in local neighborhoods building a client base from scratch.</p>
+        <p>During slower seasons, opportunities arose to purchase equipment and client lists from companies that had gone out of business. One of those opportunities led to work with the United States Marine Corps.</p>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-3xl font-black text-slate-950 mb-4">From Detailing to Government Contracts</h2>
+      <div class="text-slate-600 space-y-4 leading-relaxed">
+        <p>While working on-site, our founder helped repair a struggling car wash facility for Marine Corps Community Services (MCCS). What started as a simple repair quickly turned into ongoing maintenance work.</p>
+        <p>After studying Federal Acquisition Regulations (FAR) and developing compliant proposals, Car Wash Management successfully secured contracts to service and maintain car wash operations on military installations.</p>
+        <p>That success expanded to Marine Corps Base Hawaii and into warehousing, distribution, and ongoing service partnerships—laying the foundation for what we do today.</p>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-3xl font-black text-slate-950 mb-6">Our Core Pillars</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {[
+          { t: 'Integrity', d: "We tell the truth, even when it's inconvenient. Our recommendations are grounded in real data and real experience." },
+          { t: 'Transparency', d: "Clear communication is our standard. Clients know exactly what they're getting, what it costs, and how it works." },
+          { t: 'Compassion', d: 'We understand staffing, downtime, rising costs, and operational pressure—and operate with empathy.' },
+        ].map((p) => (
+          <div class="rounded-2xl border border-slate-200 p-6">
+            <h3 class="font-black text-slate-900 mb-2">{p.t}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{p.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="text-center bg-slate-50 rounded-2xl border border-slate-200 p-10">
+      <h2 class="text-2xl font-black text-slate-950 mb-3">Let's Find Where You're Losing Money</h2>
+      <p class="text-slate-500 mb-6">We'll take a close look at your operation and show you exactly where you can reduce costs and improve performance.</p>
+      <a href="/book-a-call" class="inline-flex bg-[#0779ef] text-white font-bold px-6 py-3 rounded-xl">Book Your Free Strategy Call</a>
+    </div>
+  </section>
+</MarketingLayout>

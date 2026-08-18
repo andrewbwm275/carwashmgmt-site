@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.astro/
+public/index.html
+public/about/
+public/blog/
+public/chemistry/
+.DS_Store
+.env
+.env.*
+!.env.example
+src/fragments/
+src/data/pages.generated.ts
+src/content/
+live-capture/raw/
+live-capture/preview/
+live-capture/preview-server.mjs

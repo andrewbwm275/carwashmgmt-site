@@ -1,0 +1,23 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { SITE_URL } from '../data/site';
+---
+
+<SiteLayout
+  title="Submit a Testimonial | Car Wash Management"
+  description="Share your experience working with Car Wash Management."
+  canonical={`${SITE_URL}/submit-testimonial`}
+  pageKey="submit-testimonial"
+>
+  <section class="max-w-xl mx-auto px-6 py-16">
+    <h1 class="text-3xl font-black text-slate-950 mb-2">Submit a Testimonial</h1>
+    <p class="text-slate-500 mb-8">We'd love to hear how working with us impacted your wash.</p>
+    <form data-form="testimonial" class="space-y-4 bg-white border border-slate-200 rounded-2xl p-6">
+      <input name="name" required placeholder="Your name" class="w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm" />
+      <input name="email" type="email" required placeholder="Email" class="w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm" />
+      <input name="company" placeholder="Wash / company" class="w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm" />
+      <textarea name="message" required rows="5" placeholder="Your testimonial" class="w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm"></textarea>
+      <button type="submit" class="w-full bg-[#0779ef] text-white font-bold py-3 rounded-xl">Submit</button>
+    </form>
+  </section>
+</SiteLayout>

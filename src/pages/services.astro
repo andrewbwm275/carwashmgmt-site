@@ -1,0 +1,40 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+---
+
+<MarketingLayout
+  title="Services | Car Wash Management"
+  description="Expert car wash consultations that drive real results—profitability, lower operating costs, and stronger operations."
+  path="/services"
+  pageKey="services"
+  badge="Consultations"
+  headline="Expert Car Wash Consultations That Drive Real Results"
+  subhead="Get clear, practical guidance to improve profitability, reduce operating costs, solve equipment issues, and build a stronger car wash operation."
+>
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+      <span class="text-xs font-bold uppercase tracking-widest text-[#0779ef]">What to Expect</span>
+      <h2 class="text-3xl font-black text-slate-950 mt-2 mb-3">What Happens During Your Consultation</h2>
+      <p class="text-slate-500">A focused, no-fluff session designed to identify problems, uncover opportunities, and give you clear next steps.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      {[
+        { t: 'Operational Assessment', items: ['Equipment and system review', 'Throughput and efficiency analysis', 'Cost leak identification'] },
+        { t: 'Profit & Cost Opportunities', items: ['Water, chemical, and labor optimization', 'Revenue improvement opportunities', 'Pricing and performance insights'] },
+        { t: 'Clear Action Plan', items: ['Specific recommendations', 'Step-by-step next actions', 'Long-term optimization strategy'] },
+      ].map((b) => (
+        <div class="rounded-2xl border border-slate-200 p-6">
+          <h3 class="font-black text-slate-900 mb-3">{b.t}</h3>
+          <ul class="text-sm text-slate-600 space-y-2">
+            {b.items.map((i) => <li>• {i}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="cwm-dark-band">
+      <h2 style="font-size:1.5rem;font-weight:900;margin:0 0 12px;color:#fff">Stop Guessing. Start Optimizing Your Car Wash.</h2>
+      <p style="margin:0 0 24px">We'll show you exactly where you're losing money—and how to fix it.</p>
+      <a href="/book-a-call" class="cwm-btn-primary cwm-btn-lg">Book Your Free Consultation</a>
+    </div>
+  </section>
+</MarketingLayout>

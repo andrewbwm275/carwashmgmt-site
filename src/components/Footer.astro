@@ -1,0 +1,164 @@
+---
+import { LOGO_FOOT, PHONE, EMAIL } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="foot-inner">
+    <div style="margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid #1e293b">
+      <div style="display:grid;gap:24px;align-items:center" class="foot-news">
+        <div>
+          <h3 style="font-size:18px;font-weight:700;margin:0 0 8px">Join 200+ Car Wash Operators</h3>
+          <p style="color:#94a3b8;font-size:14px;margin:0"
+            >Get operational tips, chemical strategies, and profitability tactics — straight from our team. No spam, no
+            fluff.</p
+          >
+        </div>
+        <div>
+          <form id="foot-news-form" data-form="newsletter" style="display:flex;gap:8px">
+            <input class="foot-input" type="email" name="email" placeholder="Enter your email" required />
+            <button
+              class="btn"
+              type="submit"
+              style="background:#073ECC;color:#fff;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:700"
+              >Subscribe <i data-lucide="arrow-right" style="width:16px;height:16px"></i></button
+            >
+          </form>
+          <p style="color:#64748b;font-size:12px;margin:8px 0 0">Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot-grid">
+      <div>
+        <img src={LOGO_FOOT} alt="Car Wash Management" style="height:64px;width:auto;margin-bottom:16px" />
+        <p style="color:#94a3b8;font-size:14px;line-height:1.7;margin:0 0 24px"
+          >The operational backbone of California's car wash industry.</p
+        >
+        <div style="display:flex;gap:12px">
+          <a class="soc" href="https://www.facebook.com/CarWashManagementLLC" target="_blank" rel="noopener noreferrer"
+            ><i data-lucide="facebook" style="width:16px;height:16px"></i></a
+          >
+          <a class="soc" href="https://www.linkedin.com/company/carwashmgmt/" target="_blank" rel="noopener noreferrer"
+            ><i data-lucide="linkedin" style="width:16px;height:16px"></i></a
+          >
+          <a class="soc" href="https://www.youtube.com/@CarWashManagementLLC" target="_blank" rel="noopener noreferrer"
+            ><i data-lucide="youtube" style="width:16px;height:16px"></i></a
+          >
+          <a class="soc" href="https://www.instagram.com/carwashmgmt" target="_blank" rel="noopener noreferrer"
+            ><i data-lucide="instagram" style="width:16px;height:16px"></i></a
+          >
+        </div>
+      </div>
+      <div>
+        <h4
+          style="font-weight:600;margin:0 0 16px;font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:#94a3b8"
+          >Contact</h4
+        >
+        <ul
+          style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;color:#cbd5e1;font-size:14px"
+        >
+          <li style="display:flex;gap:12px"
+            ><i data-lucide="phone" style="width:16px;height:16px;color:#3882f6;flex-shrink:0;margin-top:2px"></i><a
+              href="tel:+18084652291">808-465-2291</a
+            ></li
+          >
+          <li style="display:flex;gap:12px"
+            ><i data-lucide="mail" style="width:16px;height:16px;color:#3882f6;flex-shrink:0;margin-top:2px"></i><a
+              href={`mailto:${EMAIL}`}>{EMAIL}</a
+            ></li
+          >
+          <li style="display:flex;gap:12px"
+            ><i data-lucide="clock" style="width:16px;height:16px;color:#3882f6;flex-shrink:0;margin-top:2px"></i><span
+              >Mon–Fri: 8am – 6pm PST</span
+            ></li
+          >
+          <li style="display:flex;gap:12px"
+            ><i data-lucide="map-pin" style="width:16px;height:16px;color:#3882f6;flex-shrink:0;margin-top:2px"></i><span
+              >Serving car washes nationwide</span
+            ></li
+          >
+        </ul>
+      </div>
+      <div>
+        <h4
+          style="font-weight:600;margin:0 0 16px;font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:#94a3b8"
+          >Quick Links</h4
+        >
+        <ul
+          style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;font-size:14px"
+        >
+          <li><a href="/about" style="color:#cbd5e1">About</a></li>
+          <li><a href="/chemistry" style="color:#cbd5e1">Chemicals</a></li>
+          <li><a href="/preventive-maintenance" style="color:#cbd5e1">Maintenance</a></li>
+          <li><a href="/equipment" style="color:#cbd5e1">Equipment</a></li>
+          <li><a href="/solutions" style="color:#cbd5e1">Consulting</a></li>
+          <li><a href="/sms" style="color:#cbd5e1">SMS program (text START)</a></li>
+          <li><a href="/results" style="color:#cbd5e1">Results</a></li>
+        </ul>
+      </div>
+    </div>
+    <div
+      style="border-top:1px solid #1e293b;margin-top:48px;padding-top:32px;display:flex;flex-direction:column;gap:16px;align-items:center"
+      class="foot-bottom"
+    >
+      <p style="font-size:13px;color:#cbd5e1;max-width:52rem;margin:0 0 16px;line-height:1.6">
+        Customer-care SMS: text <strong>START</strong> to <a href="sms:+16199146819&body=START" style="color:#bef264">+1 619-914-6819</a>.
+        Keyword-only — no web form. Reply STOP to opt out, HELP for help. Message frequency varies (up to 8 msgs/month plus replies).
+        Message and data rates may apply.
+        <a href="https://legal.carwashmgmt.com/privacy-policy.html" style="color:#bef264">Privacy</a> ·
+        <a href="https://legal.carwashmgmt.com/terms-and-conditions.html" style="color:#bef264">Terms</a>
+      </p>
+      <p style="font-size:12px;color:#64748b;margin:0">© {year} Car Wash Services LLC. All rights reserved.</p>
+      <div style="display:flex;gap:24px;font-size:12px;color:#64748b"
+        ><a href="/privacy-policy">Privacy Policy</a><a href="/terms-and-conditions">Terms &amp; Conditions</a></div
+      >
+    </div>
+  </div>
+</footer>
+<div class="sticky-bottom">
+  <a href="tel:+18084652291"><i data-lucide="phone" style="width:18px;height:18px"></i>Call</a>
+  <a href="/calculator"><i data-lucide="calculator" style="width:18px;height:18px"></i>ROI</a>
+  <a href="/book-a-call" class="primary"><i data-lucide="calendar" style="width:18px;height:18px"></i>Book Call</a>
+</div>
+<a href="/book-a-call" class="sticky-cta"
+  ><i data-lucide="calendar" style="width:16px;height:16px"></i> Free Consultation</a
+>
+<div class="np-overlay" id="np-overlay">
+  <div class="np-card">
+    <button class="np-close" id="np-close" type="button" aria-label="Close"
+      ><i data-lucide="x" style="width:20px;height:20px"></i></button
+    >
+    <div
+      style="width:48px;height:48px;border-radius:12px;background:rgba(15,82,251,.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px"
+      ><i data-lucide="book-open" style="width:24px;height:24px;color:#0F52FB"></i></div
+    >
+    <h3 style="font-size:22px;font-weight:800;margin:0 0 8px;color:#0f172a">The Car Wash Profit Guide</h3>
+    <p style="color:#64748b;font-size:14px;margin:0 0 20px"
+      >Join 200+ operators. Get our free guide on the chemical, downtime, and operational leaks quietly draining your
+      margins.</p
+    >
+    <form id="np-form" data-form="guide" style="display:flex;flex-direction:column;gap:10px">
+      <input
+        class="foot-input"
+        style="background:#f1f5f9;border:1px solid #e2e8f0;color:#0f172a"
+        type="text"
+        name="name"
+        placeholder="Your name"
+        required
+      />
+      <input
+        class="foot-input"
+        style="background:#f1f5f9;border:1px solid #e2e8f0;color:#0f172a"
+        type="email"
+        name="email"
+        placeholder="Your email"
+        required
+      />
+      <button class="btn btn-blue" type="submit" style="height:46px;border-radius:8px;font-size:14px"
+        >Send Me the Guide <i data-lucide="arrow-right" style="width:16px;height:16px"></i></button
+      >
+    </form>
+    <p style="color:#94a3b8;font-size:11px;margin:10px 0 0;text-align:center">No spam. Unsubscribe anytime.</p>
+  </div>
+</div>

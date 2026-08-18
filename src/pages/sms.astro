@@ -1,0 +1,37 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { SITE_URL, SMS_DISPLAY, SMS_KEYWORD, EMAIL, PHONE, PHONE_TEL, LEGAL_PRIVACY, LEGAL_TERMS, LEGAL_HOME } from '../data/site';
+---
+
+<SiteLayout
+  title="SMS customer-care program | Car Wash Management"
+  description={`Text ${SMS_KEYWORD} to ${SMS_DISPLAY} to opt in to Car Wash Management customer-care SMS. STOP to opt out, HELP for help. Keyword-only.`}
+  canonical={`${SITE_URL}/sms`}
+  pageKey="sms"
+  hideSticky={true}
+>
+  <section class="max-w-3xl mx-auto px-6 py-12 text-slate-700 leading-relaxed space-y-4">
+    <p>
+      Car Wash Services LLC d/b/a Car Wash Management · 7776 Trade Street, San Diego, CA 92121 · FEIN 33-4786509 ·
+      <a class="text-[#0779ef] underline" href="https://www.carwashmgmt.com">www.carwashmgmt.com</a> ·
+      <a class="text-[#0779ef] underline" href={`mailto:${EMAIL}`}>{EMAIL}</a> ·
+      <a class="text-[#0779ef] underline" href={`tel:${PHONE_TEL}`}>{PHONE}</a>
+    </p>
+    <p>
+      This page is the brand-domain SMS program notice for TCR / 10DLC reviewers. The same keyword-only opt-in is also
+      printed on the homepage. A2P legal copies live at{' '}
+      <a class="text-[#0779ef] underline" href={LEGAL_HOME}>{LEGAL_HOME}</a> (do not change that host).
+    </p>
+    <h2 class="text-xl font-bold text-slate-900 pt-4">What the texts are</h2>
+    <p>
+      Two-way customer-care messages about orders, deliveries, appointments, application or onboarding status, and replies
+      to questions you send us. Not a marketing blast. We do not send mass SMS on this program until the campaign is
+      VERIFIED.
+    </p>
+    <p>
+      <a class="text-[#0779ef] underline" href={LEGAL_PRIVACY}>{LEGAL_PRIVACY}</a>
+      <br />
+      <a class="text-[#0779ef] underline" href={LEGAL_TERMS}>{LEGAL_TERMS}</a>
+    </p>
+  </section>
+</SiteLayout>

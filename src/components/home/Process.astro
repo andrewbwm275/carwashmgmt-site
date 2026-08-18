@@ -1,0 +1,42 @@
+---
+const steps = [
+  {
+    title: 'Free Profit Audit',
+    desc: "We review your current operation, identify inefficiencies, and uncover where you're losing money—at no cost and no obligation.",
+  },
+  {
+    title: 'Custom Strategy Plan',
+    desc: 'You get a clear, actionable plan tailored to your equipment, chemistry, and workflow to improve performance and reduce costs.',
+  },
+  {
+    title: 'Implementation & Ongoing Support',
+    desc: 'We help you execute the plan, optimize your systems, and ensure your operation continues to run efficiently.',
+  },
+];
+---
+
+<section class="py-16 px-6 bg-slate-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-black text-slate-950 tracking-tight mb-3">A Simple, Proven Process to Improve Your Car Wash</h2>
+      <p class="text-slate-500">From first call to real results—we make it straightforward.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      {steps.map((s, i) => (
+        <div class="bg-white rounded-2xl border border-slate-200 p-8">
+          <div class="w-10 h-10 rounded-full bg-[#0779ef] text-white font-bold flex items-center justify-center mb-4">{i + 1}</div>
+          <h3 class="text-lg font-black text-slate-900 mb-2">{s.title}</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+    <div class="text-center">
+      <p class="text-sm text-slate-500 mb-4">Most operators see opportunities within the first conversation.</p>
+      <a href="/book-a-call" class="inline-flex items-center gap-2 bg-[#0779ef] hover:bg-blue-600 text-white font-bold px-6 py-3.5 rounded-xl transition-colors">
+        Start My Free Profit Audit
+        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <p class="text-xs text-slate-400 mt-3">No obligation • No pressure • Clear next steps</p>
+    </div>
+  </div>
+</section>

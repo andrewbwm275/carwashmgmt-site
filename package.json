@@ -1,0 +1,25 @@
+{
+  "name": "carwashmgmt-site",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "capture:live": "node live-capture/capture-all.mjs",
+    "prepare:snapshots": "node scripts/process-live-captures.mjs && node scripts/generate-live-pages.mjs",
+    "dev": "astro dev",
+    "build": "astro build && node scripts/postbuild.mjs",
+    "preview": "astro preview",
+    "verify": "node scripts/verify-seo.mjs",
+    "verify:routes": "node scripts/verify-routes.mjs",
+    "deploy": "npm run build && npx wrangler pages deploy dist --project-name=carwashmgmt",
+    "deploy:vision": "npx wrangler pages deploy site-vision --project-name=carwashmgmt-vision"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.4.1",
+    "astro": "^5.11.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.1",
+    "typescript": "^5.8.2"
+  }
+}

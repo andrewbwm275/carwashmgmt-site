@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Share Your Story | Car Wash Services</title>
+<meta name="description" content="Tell us how Car Wash Services helped your operation. Submit your testimonial.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+.navy-bg{background:linear-gradient(145deg,#020c1f 0%,#041232 30%,#071a42 60%,#020c1f 100%);position:relative;overflow:hidden}
+.bp-grid{position:absolute;inset:0;opacity:.06;background-image:linear-gradient(rgba(15,82,251,.25) 1px,transparent 1px),linear-gradient(90deg,rgba(15,82,251,.25) 1px,transparent 1px);background-size:52px 52px;pointer-events:none}
+.fi{width:100%;margin-top:6px;padding:11px 14px;border:1px solid #e2e8f0;border-radius:8px;font-size:14px;background:#fff;color:#0f172a}
+.fi:focus{outline:none;border-color:#0F52FB;box-shadow:0 0 0 3px rgba(15,82,251,.12)}
+.flbl{font-size:13px;font-weight:600;color:#334155}
+</style>
+</head>
+<body data-page="Results">
+<div id="site-header"></div>
+<main>
+  <section class="navy-bg" style="padding:64px 24px">
+    <div class="bp-grid"></div>
+    <div class="wrap" style="position:relative;z-index:10;max-width:42rem;text-align:center">
+      <span style="display:inline-block;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.4em;color:#0f52fb;margin-bottom:16px">Share Your Story</span>
+      <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:#fff;line-height:1.1;margin:0 0 12px">Tell us how we helped your wash.</h1>
+      <p style="color:#94a3b8;font-size:16px;margin:0 auto;max-width:32rem">Your experience helps other operators make confident decisions. It only takes a minute.</p>
+    </div>
+  </section>
+  <section style="padding:56px 24px;background:#F7F8FA">
+    <div class="wrap" style="max-width:42rem">
+      <form data-mock data-success="Thank you! Your testimonial has been submitted for review." style="background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:32px;box-shadow:0 2px 20px rgba(2,19,63,.05)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:16px">
+          <div><label class="flbl">Your Name *</label><input class="fi" required></div>
+          <div><label class="flbl">Email *</label><input class="fi" type="email" required></div>
+          <div><label class="flbl">Phone</label><input class="fi"></div>
+          <div><label class="flbl">Your Role / Business</label><input class="fi" placeholder="e.g. Owner – Express Wash, CA"></div>
+        </div>
+        <div style="margin-bottom:16px"><label class="flbl">Service Used</label>
+          <select class="fi"><option value="">Select…</option><option>Nano Bubble System</option><option>Chemistry Optimization</option><option>Equipment Upgrade</option><option>Consulting Services</option><option>Preventive Maintenance</option></select>
+        </div>
+        <div style="margin-bottom:16px"><label class="flbl">Your Testimonial *</label><textarea class="fi" rows="4" required placeholder="What changed for your operation?"></textarea></div>
+        <div style="margin-bottom:24px"><label class="flbl">Results / Numbers (optional)</label><input class="fi" placeholder="e.g. Cut water costs 45%"></div>
+        <button type="submit" class="btn btn-blue" style="padding:14px 40px;border-radius:8px;font-size:15px;font-weight:700;gap:8px">Submit Testimonial <i data-lucide="send" style="width:16px;height:16px"></i></button>
+      </form>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

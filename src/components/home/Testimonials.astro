@@ -1,0 +1,23 @@
+---
+const quotes = [
+  {
+    text: 'CWM completely transformed our operation. We cut water costs by 45% and increased our throughput by 30%. The ROI was immediate and the ongoing support is top-notch.',
+    name: 'Operations Manager',
+    role: 'Multi-site operator',
+  },
+];
+---
+
+<section class="py-16 px-6 bg-slate-50">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-black text-slate-950 tracking-tight mb-3">What Our Clients Say</h2>
+    <p class="text-slate-500 mb-10">Don't just take our word for it—hear from operators who've transformed their washes.</p>
+    {quotes.map((q) => (
+      <blockquote class="bg-white rounded-2xl border border-slate-200 p-8 md:p-10 shadow-sm">
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">"{q.text}"</p>
+        <footer class="text-sm text-slate-500">{q.name} · {q.role}</footer>
+      </blockquote>
+    ))}
+    <a href="/testimonials" class="inline-block mt-6 text-[#0779ef] font-semibold text-sm hover:underline">More testimonials →</a>
+  </div>
+</section>

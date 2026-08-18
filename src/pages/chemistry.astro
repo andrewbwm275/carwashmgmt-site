@@ -1,0 +1,148 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { products } from '../data/products.mjs';
+import { SITE_URL } from '../data/site';
+
+const categories = ['All', 'Presoak', 'Triple Foam', 'Wheel & Tire', 'Protectants', 'Finishing', 'Cleaning'];
+const chemHero =
+  'https://media.base44.com/images/public/699f163455fdaf19c59586b8/bcc63916d_pexels-nguyendesigner-243971.jpg';
+
+function money(n: number | null) {
+  if (n == null) return 'Quote';
+  return `$${n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+}
+---
+
+<SiteLayout
+  title="Chemistry | Car Wash Management"
+  description="Premium car wash chemicals optimized for your water, equipment, and goals — reducing costs while delivering consistently better wash results."
+  canonical={`${SITE_URL}/chemistry`}
+  pageKey="chemistry"
+>
+  <section class="cwm-mkt-hero">
+    <div class="cwm-mkt-hero-bg">
+      <img src={chemHero} alt="" />
+    </div>
+    <div class="cwm-mkt-hero-content">
+      <span class="cwm-eyebrow">Chemistry</span>
+      <h1>The Right Chemistry Changes Everything.</h1>
+      <p>
+        Premium chemicals optimized for your water, equipment, and goals — reducing costs while delivering consistently better wash results.
+      </p>
+      <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:2rem;text-align:center">
+        <div><div style="font-size:1.5rem;font-weight:900">20–40%</div><div style="font-size:12px;color:rgba(255,255,255,.65)">Chemical cost reduction</div></div>
+        <div><div style="font-size:1.5rem;font-weight:900">0</div><div style="font-size:12px;color:rgba(255,255,255,.65)">Spotting &amp; re-wash complaints</div></div>
+        <div><div style="font-size:1.5rem;font-weight:900">100%</div><div style="font-size:12px;color:rgba(255,255,255,.65)">Matched to your water profile</div></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+        <a href="/book-a-call" class="cwm-btn-primary cwm-btn-lg">Get a Free Chemical Audit →</a>
+        <a href="#shop" class="cwm-btn-secondary cwm-btn-lg" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.45)">Shop Chemicals ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 -mt-8 relative z-10 mb-12">
+    <div class="max-w-7xl mx-auto bg-white rounded-2xl border border-slate-200 shadow-lg p-6 md:p-10 grid lg:grid-cols-2 gap-8">
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-black text-slate-900 mb-2">The Problem</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Most operators are overdosing chemicals to compensate for inconsistent results — spending 20–40% more than necessary while still getting re-wash complaints and spotting issues.</p>
+        </div>
+        <div>
+          <h3 class="font-black text-slate-900 mb-2">How We Fix It</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">We test your water profile, audit dilution ratios, and match products to your equipment and wash type. The result: less chemical used, better clean, fewer complaints.</p>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-black text-slate-900 mb-3">Key Benefits</h3>
+        <ul class="space-y-2 text-sm text-slate-700">
+          {['Cut cost per car without re-washes','Eliminate spotting, streaking & residue','Consistent quality across every cycle','Matched to your water profile & equipment','Non-corrosive — extends equipment life','Eco-friendly, California-compliant'].map((b) => (
+            <li class="flex items-start gap-2">
+              <span class="mt-0.5 w-5 h-5 rounded-full bg-[#0779ef] text-white text-xs flex items-center justify-center flex-shrink-0">✓</span>
+              {b}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop" class="px-6 pb-20">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-8">
+        <span class="cwm-eyebrow">Shop Chemicals</span>
+        <h2 class="text-3xl md:text-4xl font-black text-slate-950 mb-2">Performance Chemicals &amp; Pricing</h2>
+        <p class="text-slate-500">Select your size and add to your quote cart.</p>
+        <p class="text-sm text-[#0779ef] font-medium mt-2">✓ Clients typically reduce chemical usage by 20–40% after switching to our optimized programs</p>
+      </div>
+
+      <div class="flex flex-wrap gap-2 justify-center mb-8">
+        {categories.map((c) => (
+          <button
+            type="button"
+            data-chem-filter={c === 'All' ? 'all' : c}
+            class={`text-xs py-1.5 px-3 rounded-lg border font-medium transition-colors ${c === 'All' ? 'bg-[#0779ef] border-[#0779ef] text-white' : 'border-slate-200 text-slate-600 hover:border-[#0779ef]'}`}
+          >
+            {c}
+          </button>
+        ))}
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        {products.map((p) => (
+          <div
+            class="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col"
+            data-product-card
+            data-slug={p.slug}
+            data-name={p.name}
+            data-category={p.category}
+            data-prices={JSON.stringify(p.prices)}
+            data-selected-size="5 GAL"
+          >
+            <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
+              <img src={p.image} alt={p.name} class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div class="p-4 flex flex-col flex-1">
+              <span class="text-xs font-semibold text-[#0779ef] uppercase tracking-wider mb-1">{p.category}</span>
+              <h3 class="font-bold text-slate-900 text-sm mb-3 leading-tight">{p.name}</h3>
+              <div class="grid grid-cols-3 gap-1 mb-3">
+                {(['5 GAL', '15 GAL', '30 GAL'] as const).map((size, i) => (
+                  <button
+                    type="button"
+                    data-size={size}
+                    class={`text-xs py-1.5 px-1 rounded-lg border font-medium transition-colors ${i === 0 ? 'bg-[#0779ef] border-[#0779ef] text-white' : 'border-slate-200 text-slate-600 hover:border-[#0779ef]'}`}
+                  >
+                    {size}
+                  </button>
+                ))}
+              </div>
+              <div class="text-lg font-black text-slate-900 mb-3" data-price>{money(p.prices['5 GAL'])}</div>
+              <div class="mt-auto space-y-2">
+                <button type="button" data-add-cart class="w-full bg-[#0779ef] hover:bg-blue-600 text-white text-sm font-bold py-2.5 rounded-xl transition-colors">Add to Cart</button>
+                <a href={`/chemical-product/${p.slug}`} class="block text-center text-sm font-semibold text-[#0779ef] hover:underline">Learn More</a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <button type="button" id="cwm-cart-fab" hidden>Quote Cart (0)</button>
+
+  <aside id="cwm-quote-cart" aria-label="Quote cart">
+    <div class="flex items-center justify-between p-4 border-b border-slate-200">
+      <h3 class="font-bold text-slate-900">Quote Cart <span id="cwm-cart-count" class="text-slate-400 font-normal">(0)</span></h3>
+      <button type="button" data-cart-close class="text-2xl leading-none text-slate-400 hover:text-slate-700" aria-label="Close">×</button>
+    </div>
+    <div id="cwm-cart-items" class="flex-1 overflow-auto"></div>
+    <form id="cwm-quote-form" class="p-4 border-t border-slate-200 space-y-3 bg-slate-50">
+      <input name="name" required placeholder="Your name" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm" />
+      <input name="email" type="email" required placeholder="Email" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm" />
+      <input name="phone" placeholder="Phone" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm" />
+      <input name="company" placeholder="Company / wash name" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm" />
+      <textarea name="notes" rows="2" placeholder="Notes (optional)" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm"></textarea>
+      <button type="submit" class="w-full bg-[#0779ef] text-white font-bold py-3 rounded-xl">Request Quote</button>
+    </form>
+  </aside>
+</SiteLayout>

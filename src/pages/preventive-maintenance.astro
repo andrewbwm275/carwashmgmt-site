@@ -1,0 +1,33 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+---
+
+<MarketingLayout
+  title="Preventive Maintenance | Car Wash Management"
+  description="Scheduled car wash preventive maintenance that cuts downtime and protects equipment life."
+  path="/preventive-maintenance"
+  pageKey="preventive-maintenance"
+  badge="Maintenance"
+  headline="Keep Your Tunnel Running. Protect Your Revenue."
+  subhead="Scheduled inspections and rapid response that catch problems before they cost you cars per hour."
+>
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      {[
+        { t: 'Scheduled Inspections', d: 'Proactive checks on pumps, conveyors, chemistry delivery, and reclaim.' },
+        { t: 'Rapid Response', d: 'Priority support when something fails so you get back online fast.' },
+        { t: 'Parts & Consumables', d: 'The right parts on hand for common failure points.' },
+        { t: 'Operator Training', d: 'Teach your team what to watch so small issues stay small.' },
+      ].map((c) => (
+        <div class="rounded-2xl border border-slate-200 p-6">
+          <h3 class="font-black text-slate-900 mb-2">{c.t}</h3>
+          <p class="text-sm text-slate-600">{c.d}</p>
+        </div>
+      ))}
+    </div>
+    <div class="text-center bg-slate-50 rounded-2xl p-10 border border-slate-200">
+      <h2 class="text-2xl font-black mb-3">Reduce Unplanned Downtime</h2>
+      <a href="/book-a-call" class="inline-flex bg-[#0779ef] text-white font-bold px-6 py-3 rounded-xl">Get a PM Plan</a>
+    </div>
+  </section>
+</MarketingLayout>

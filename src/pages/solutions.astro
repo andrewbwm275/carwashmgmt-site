@@ -1,0 +1,27 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+---
+
+<MarketingLayout
+  title="Solutions | Car Wash Management"
+  description="End-to-end car wash solutions—strategy, chemistry, equipment, and maintenance under one partner."
+  path="/solutions"
+  pageKey="solutions"
+  badge="Solutions"
+  headline="Everything Your Wash Needs. One Partner."
+  subhead="From operational strategy to chemistry and equipment—we run the layer high-volume operators depend on."
+>
+  <section class="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-6">
+    {[
+      { t: 'Consulting & Strategy', d: 'Audits, new-site planning, throughput optimization.', h: '/services' },
+      { t: 'Chemical Programs', d: 'Premium chemistry matched to your water and volume.', h: '/chemistry' },
+      { t: 'Equipment Solutions', d: 'Spec, install, upgrade, and repair.', h: '/equipment' },
+      { t: 'Preventive Maintenance', d: 'Scheduled service that prevents expensive downtime.', h: '/preventive-maintenance' },
+    ].map((c) => (
+      <a href={c.h} class="rounded-2xl border border-slate-200 p-8 hover:border-[#0779ef]/40 hover:shadow-lg transition-all">
+        <h2 class="text-xl font-black text-slate-900 mb-2">{c.t}</h2>
+        <p class="text-sm text-slate-600">{c.d}</p>
+      </a>
+    ))}
+  </section>
+</MarketingLayout>
