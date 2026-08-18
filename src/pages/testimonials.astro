@@ -4,26 +4,22 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 
 <MarketingLayout
   title="Testimonials | Car Wash Management"
-  description="What car wash operators say about working with Car Wash Management."
+  description="Car Wash Management does not invent operator reviews. Submit a real quote if you run a CWM site."
   path="/testimonials"
   pageKey="testimonials"
-  badge="Testimonials"
-  headline="What Operators Say"
-  subhead="Real feedback from owners and managers who've improved cost, uptime, and wash quality."
+  badge="Operators"
+  headline="No invented reviews."
+  subhead="This brand does not publish fake names or made-up ROI quotes. The catalog is real. Testimonials wait for operators who actually ran the chemistry."
 >
-  <section class="max-w-3xl mx-auto px-6 py-16 space-y-6">
-    {[
-      { t: 'We switched suppliers and cut chemical costs by 31% in the first quarter—without a single customer complaint.', n: 'Roberto M.', r: 'Tunnel Operator, Fresno, CA' },
-      { t: "I was overdosing my presoak for years. CW MGMT audited my dilution ratios and I'm saving over $400/month.", n: 'Lisa H.', r: 'Express Wash Owner, Orange County, CA' },
-      { t: 'The triple foam is a customer favorite. Eco-friendly and made for California operations is a bonus I can market.', n: 'Derek S.', r: 'Multi-Site Operator, Bay Area, CA' },
-    ].map((q) => (
-      <blockquote class="rounded-2xl border border-slate-200 p-8 bg-white">
-        <p class="text-slate-700 leading-relaxed mb-4">"{q.t}"</p>
-        <footer class="text-sm text-slate-500"><strong class="text-slate-800">{q.n}</strong> · {q.r}</footer>
-      </blockquote>
-    ))}
-    <div class="text-center pt-4">
-      <a href="/submit-testimonial" class="text-[#0779ef] font-semibold hover:underline">Submit your testimonial →</a>
+  <section class="cwm-legal-page">
+    <div class="cwm-honest">
+      <p>
+        If you operate a wash that uses Car Wash Management chemistry or PM and want a quote on this page, send it.
+        We will not attribute numbers to people who did not say them.
+      </p>
+      <p>
+        <a href="/submit-testimonial">Submit a real testimonial →</a>
+      </p>
     </div>
   </section>
 </MarketingLayout>

@@ -1,24 +1,19 @@
 ---
 const stats = [
-  { value: '150+', label: 'Washes Optimized' },
-  { value: '20–40%', label: 'Reduction in Chemical Costs' },
-  { value: 'Up to 70%', label: 'Reduction in Downtime' },
-  { value: '$1M+', label: 'Estimated Client Savings' },
+  { value: '15+', label: 'Years in the field — detailing, military wash contracts, then chemistry and PM.' },
+  { value: '23', label: 'Catalog products on this site, from presoaks to protectants.' },
+  { value: 'SD', label: '7776 Trade Street, San Diego. Nationwide service.' },
+  { value: '808', label: 'Voice line 808-465-2291. SMS is keyword-only on this site.' },
 ];
 ---
 
-<section class="px-6 pb-16">
-  <div class="max-w-7xl mx-auto bg-slate-50 rounded-3xl border border-slate-100 px-6 py-12 md:px-12">
-    <div class="text-center mb-10">
-      <span class="cwm-eyebrow">Proven Results</span>
-      <h2 class="text-3xl md:text-4xl font-black text-slate-950 tracking-tight mb-3">Results That Actually Impact Your Bottom Line</h2>
-      <p class="text-slate-500 max-w-2xl mx-auto">Real-world results from operators who needed better performance, lower costs, and reliable systems.</p>
-    </div>
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+<section class="cwm-home-stats" aria-label="Field facts">
+  <div class="cwm-home-stats-inner">
+    <div class="cwm-home-stats-grid">
       {stats.map((s) => (
-        <div class="text-center">
-          <div class="text-3xl md:text-4xl font-black text-[#0779ef] mb-1">{s.value}</div>
-          <div class="text-sm text-slate-500">{s.label}</div>
+        <div class="cwm-home-stat">
+          <b>{s.value}</b>
+          <span>{s.label}</span>
         </div>
       ))}
     </div>

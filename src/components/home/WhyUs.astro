@@ -1,23 +1,23 @@
 ---
 const items = [
-  { title: 'Results-Driven Approach', desc: 'We focus on measurable improvements in cost, performance, and reliability.' },
-  { title: 'End-to-End Solutions', desc: 'From consulting to implementation, we handle everything.' },
-  { title: 'Built from Real Experience', desc: "We've worked inside car wash operations—not just advised them." },
-  { title: 'Long-Term Support', desc: 'We stay involved to ensure continued performance.' },
+  { title: 'Operators, not a pitch deck', desc: 'Work started in a Civic, then MCCS contracts, then a chemical plant.' },
+  { title: 'Quoted by size', desc: 'Catalog products are real SKUs. Pricing is a quote, not a fake review.' },
+  { title: 'Water first', desc: 'Chemistry is matched to the site water — not a one-drum-fits-all foam show.' },
+  { title: 'Long-term PM', desc: 'We stay involved so injectors, foot valves, and reclaim do not surprise you.' },
 ];
 ---
 
-<section class="py-16 px-6 bg-white">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-black text-slate-950 tracking-tight mb-3">Why Car Wash Operators Work With Us</h2>
-      <p class="text-slate-500">Built for operators who care about performance, profitability, and long-term results.</p>
+<section class="cwm-home-section">
+  <div class="cwm-home-wrap">
+    <div class="cwm-home-head">
+      <p class="cwm-eyebrow">Why operators call</p>
+      <h2 class="cwm-h2">Built from real wash work.</h2>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="cwm-cards cwm-cards-4">
       {items.map((item) => (
-        <div class="rounded-2xl border border-slate-200 p-6">
-          <h3 class="font-black text-slate-900 mb-2">{item.title}</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+        <div class="cwm-card">
+          <h3>{item.title}</h3>
+          <p>{item.desc}</p>
         </div>
       ))}
     </div>

@@ -1,14 +1,14 @@
 ---
-import { LOGO, PHONE, PHONE_TEL, EMAIL, HOURS_FOOTER, SOCIAL } from '../../data/site';
+import { PHONE, PHONE_TEL, EMAIL, HOURS_FOOTER, SOCIAL } from '../../data/site';
 import SmsOptIn from './SmsOptIn.astro';
 ---
 
 <footer class="cwm-footer">
   <div class="cwm-footer-inner">
     <div class="cwm-footer-brand">
-      <img src={LOGO} alt="Car Wash Management" class="cwm-footer-logo" width="160" height="48" />
+      <div class="cwm-footer-logo">Car Wash <span style="color:var(--cwm-brass)">Management</span></div>
       <p>
-        Hands-on consulting, premium equipment, and reliable support to make your car wash more profitable.
+        San Diego operator shop: tunnel chemistry, equipment, and preventive maintenance. Quoted by size, not slogans.
       </p>
       <div class="cwm-footer-social">
         <a href={SOCIAL.facebook} aria-label="Facebook" target="_blank" rel="noopener">

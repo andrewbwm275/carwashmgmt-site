@@ -122,4 +122,32 @@ fs.mkdirSync(assetsOut, { recursive: true });
 if (fs.existsSync(cssSrc)) fs.copyFileSync(cssSrc, path.join(assetsOut, 'site.css'));
 if (fs.existsSync(jsSrc)) fs.copyFileSync(jsSrc, path.join(assetsOut, 'site.js'));
 
-console.log('Post-build: _redirects, robots.txt, llms.txt written to dist/');
+// GitHub project pages 404 root-absolute /assets/ (they live under /carwashmgmt-site/).
+// Relative href/src keeps github.io AND a future www custom domain working.
+// Do NOT emit CNAME while www still points at Base44 — that 301s github.io to the JS shell.
+fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
+const cnamePath = path.join(DIST, 'CNAME');
+if (fs.existsSync(cnamePath) && process.env.WRITE_WWW_CNAME !== '1') {
+  fs.unlinkSync(cnamePath);
+  console.log('Post-build: stripped dist/CNAME (www DNS is not GitHub Pages yet)');
+}
+
+function relativizeHtml(dir, rel = '') {
+  for (const name of fs.readdirSync(dir)) {
+    const p = path.join(dir, name);
+    const nested = rel ? `${rel}/${name}` : name;
+    if (fs.statSync(p).isDirectory()) {
+      relativizeHtml(p, nested);
+      continue;
+    }
+    if (!name.endsWith('.html')) continue;
+    const depth = rel.split('/').filter(Boolean).length;
+    const prefix = depth === 0 ? './' : '../'.repeat(depth);
+    let html = fs.readFileSync(p, 'utf8');
+    html = html.replace(/(href|src)="\/(?!\/)/g, `$1="${prefix}`);
+    fs.writeFileSync(p, html);
+  }
+}
+relativizeHtml(DIST);
+
+console.log('Post-build: _redirects, robots.txt, llms.txt, relative asset paths written to dist/');

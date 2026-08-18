@@ -1,5 +1,5 @@
 ---
-import { LOGO, PHONE, PHONE_TEL, HOURS, NAV, SMS_DISPLAY, SMS_HREF, SMS_KEYWORD } from '../../data/site';
+import { PHONE, PHONE_TEL, HOURS, NAV, SMS_DISPLAY, SMS_HREF, SMS_KEYWORD } from '../../data/site';
 
 interface Props {
   current?: string;
@@ -27,7 +27,7 @@ function isActive(href: string) {
 <header class="cwm-header" data-site-header>
   <div class="cwm-header-inner">
     <a href="/" class="cwm-logo">
-      <img src={LOGO} alt="Car Wash Management" width="160" height="48" />
+      Car Wash <span>Management</span>
     </a>
 
     <nav class="cwm-nav" aria-label="Main">
@@ -89,9 +89,8 @@ function isActive(href: string) {
     </nav>
 
     <div class="cwm-header-actions">
-      <a href="/calculator" class="cwm-btn-primary cwm-btn-header-cta">
-        Nano Bubble - ROI Calculator
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+      <a href="/book-a-call" class="cwm-btn-primary cwm-btn-header-cta">
+        Book a call
       </a>
       <button type="button" class="cwm-mobile-toggle" data-mobile-toggle aria-label="Open menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /></svg>
@@ -115,7 +114,7 @@ function isActive(href: string) {
     <a href="/blog">Blog</a>
     <a href="/contact">Contact Us</a>
     <a href="/sms">Text START for SMS</a>
-    <a href="/calculator" class="cwm-btn-primary">Nano Bubble ROI Calculator</a>
+    <a href="/book-a-call" class="cwm-btn-primary">Book a call</a>
     <a href="/book-a-call" class="cwm-btn-secondary" style="margin-top:8px;color:#fff;background:transparent;border-color:rgba(255,255,255,.3)">Book a Call</a>
   </nav>
 </div>

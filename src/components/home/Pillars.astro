@@ -2,48 +2,44 @@
 const pillars = [
   {
     title: 'Consulting',
-    desc: 'We audit your water, chemistry, equipment, and workflow—then implement fixes alongside your team.',
-    note: 'Operators see measurable ROI within the first 60 days',
+    desc: 'Audit water, chemistry, equipment, and workflow — then implement alongside the crew.',
     href: '/services',
   },
   {
     title: 'Equipment',
-    desc: 'We source, spec, and install the right system for your site—no over-selling, no mismatched equipment.',
+    desc: 'Spec and install the right system for the site. No overselling a mismatched tunnel.',
     href: '/equipment',
   },
   {
-    title: 'Chemistry & Support',
-    desc: 'Proprietary chemistry dialed to your water profile—reducing re-washes, chemical waste, and monthly spend.',
+    title: 'Chemistry',
+    desc: 'Presoaks, tri-foam, wheel & tire, protectants — quoted by size, dialed to the water.',
     href: '/chemistry',
   },
   {
-    title: 'Preventive Maintenance',
-    desc: 'Scheduled inspections and rapid response that keep your equipment running and your bays open.',
+    title: 'Preventive maintenance',
+    desc: 'Catch a failed foot valve before Saturday volume dies. Keep the bays open.',
     href: '/preventive-maintenance',
   },
 ];
 ---
 
-<section class="py-16 px-6 bg-white">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-black text-slate-950 tracking-tight mb-3">Four Pillars of Success</h2>
-      <p class="text-slate-500 max-w-2xl mx-auto">Every service we offer targets a specific cost leak or revenue gap in your operation.</p>
+<section class="cwm-home-section">
+  <div class="cwm-home-wrap">
+    <div class="cwm-home-head">
+      <p class="cwm-eyebrow">What this company actually does</p>
+      <h2 class="cwm-h2">Match the soap to the water, then keep the tunnel moving.</h2>
+      <p class="cwm-lead">
+        Most washes over-dose chemistry to hide a water-profile or a tired injector. The work is
+        dilution, reclaim, and a PM cadence.
+      </p>
     </div>
-    <div class="grid md:grid-cols-2 gap-6">
+    <div class="cwm-cards cwm-cards-2">
       {pillars.map((p) => (
-        <a href={p.href} class="group block rounded-2xl border border-slate-200 p-8 hover:border-[#0779ef]/40 hover:shadow-lg transition-all">
-          <h3 class="text-xl font-black text-slate-900 mb-2 group-hover:text-[#0779ef] transition-colors">{p.title}</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-3">{p.desc}</p>
-          {p.note && <p class="text-xs font-semibold text-[#0779ef]">{p.note}</p>}
+        <a href={p.href} class="cwm-card">
+          <h3>{p.title}</h3>
+          <p>{p.desc}</p>
         </a>
       ))}
-    </div>
-    <div class="text-center mt-10">
-      <a href="/solutions" class="inline-flex items-center gap-2 text-[#0779ef] font-semibold hover:underline">
-        See How We Improve Results
-        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
     </div>
   </div>
 </section>
