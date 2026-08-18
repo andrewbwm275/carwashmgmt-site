@@ -15,3 +15,5 @@ src/content/
 live-capture/raw/
 live-capture/preview/
 live-capture/preview-server.mjs
+
+.github/workflows/
